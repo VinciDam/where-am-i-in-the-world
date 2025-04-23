@@ -101,12 +101,31 @@ function revealContent(contentArray) {
     a.textContent = item.value;
     a.onclick = (e) => {
       e.preventDefault();
-      showChapter(item.link);
+      // clearAllTimeouts(); // stop current content from revealing
+  
+      // Clear content if needed
+      contentEl.innerHTML = "";
+  
+      // Play audio if provided
+      if (item.audio) {
+        const audio = new Audio(item.audio);
+        audio.play();
+  
+        // Optional: wait for audio to finish before navigating
+        // audio.onended = () => showChapter(item.link);
+        
+        // Immediate navigation (uncomment instead if you prefer this)
+        showChapter(item.link);
+  
+      } else {
+        showChapter(item.link);
+      }
     };
+  
     contentEl.appendChild(a);
     lastWasValue = true;
     activeTimeouts.push(setTimeout(next, 100));
-  }
+  }  
 
   function showVideo(item) {
     contentEl.appendChild(document.createElement("br"));
