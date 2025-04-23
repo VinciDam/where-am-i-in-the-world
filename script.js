@@ -2,12 +2,12 @@
 
 const contentEl = document.getElementById("content");
 const activeTimeouts = [];
-const DEFAULT_VIDEO_THRESHOLD = 1; // seconds
+const DEFAULT_VIDEO_THRESHOLD = 0.5; // seconds
 
 document.getElementById("toggleNav").addEventListener("click", toggleNav);
 window.onload = () => {
   loadChapters();
-  showChapter("chapter-1");
+  showChapter("chapter-0");
 };
 
 function loadChapters() {
@@ -128,31 +128,46 @@ function revealContent(contentArray) {
   }  
 
   function showVideo(item) {
-    contentEl.appendChild(document.createElement("br"));
-    const video = document.createElement("video");
-    video.src = item.video;
-    video.controls = false;
-    video.autoplay = true;
-    video.muted = true;
-    video.playsInline = true;
-    video.className = "autoplay-video";
-    if (item.width) video.style.width = item.width;
-    contentEl.appendChild(video);
-
-    const threshold = item.threshold !== undefined ? item.threshold : DEFAULT_VIDEO_THRESHOLD;
-    video.onloadedmetadata = () => {
-      if (video.duration < threshold) {
-        video.onended = () => activeTimeouts.push(setTimeout(next, 100));
-      } else {
-        activeTimeouts.push(setTimeout(next, threshold * 1000));
+    // Create the video container
+    const videoContainer = document.createElement("div");
+    videoContainer.classList.add("video-container");
+  
+    // Create and append the video element
+    const videoEl = document.createElement("video");
+    videoEl.src = item.video;
+    videoEl.classList.add("autoplay-video");
+    videoEl.autoplay = true;
+    videoEl.muted = true;  // Optionally mute the video
+    videoContainer.appendChild(videoEl);
+  
+    // Check if subtitles exist and create them
+    if (item.subtitles) {
+      if (item.subtitles.top) {
+        const topSubtitle = document.createElement("div");
+        topSubtitle.classList.add("subtitle", "top-subtitle");
+        topSubtitle.textContent = item.subtitles.top.text;
+        videoContainer.appendChild(topSubtitle);
       }
-    };
-    video.onerror = () => {
-      console.warn("Video failed to load — skipping delay.");
-      activeTimeouts.push(setTimeout(next, 100));
-    };
+      
+      if (item.subtitles.bottom) {
+        const bottomSubtitle = document.createElement("div");
+        bottomSubtitle.classList.add("subtitle", "bottom-subtitle");
+        bottomSubtitle.textContent = item.subtitles.bottom.text;
+        videoContainer.appendChild(bottomSubtitle);
+      }
+    }
+  
+    // Append the video container to the content area
+    contentEl.appendChild(videoContainer);
+    
+    // Scroll to the new content
+    contentEl.scrollTop = contentEl.scrollHeight;
+  
+    // Add a timeout to go to the next piece of content
     lastWasValue = false;
+    activeTimeouts.push(setTimeout(next, 100));
   }
+  
 
   function showImage(item) {
     contentEl.appendChild(document.createElement("br"));
@@ -181,6 +196,7 @@ function revealContent(contentArray) {
       video.src = src;
       video.controls = false;
       video.autoplay = true;
+      video.loop = true;
       video.muted = true;
       video.playsInline = true;
       video.className = "autoplay-video";

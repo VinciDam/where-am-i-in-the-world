@@ -64,7 +64,8 @@ body {
   }
 
   video.autoplay-video {
-    width: 80%;
+    width: auto;
+    max-width: 100%;
     height: auto;
     display: block;
     margin: 20px 0;
@@ -79,8 +80,49 @@ body {
   
   .media-grid video,
   .media-grid img {
-    width: 100%;
+    width: auto;
+    max-width: 100%;
     height: auto;
     border-radius: 6px;
     box-shadow: 0 2px 6px rgba(0,0,0,0.2);
   }
+
+  .video-container {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    margin: 20px 0;
+    overflow: hidden;
+  }
+  
+  .subtitle {
+    position: absolute;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    pointer-events: none;
+    text-align: center;
+    font-size: 1rem;
+    color: #fff;
+    text-shadow: 1px 1px 3px #000;
+  }
+  
+  .top-subtitle {
+    top: 5px;
+    animation: scrollLeft 10s linear infinite;
+  }
+  
+  .bottom-subtitle {
+    bottom: 5px;
+    animation: scrollLeft 10s linear infinite;
+  }
+  
+  @keyframes scrollLeft {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  
