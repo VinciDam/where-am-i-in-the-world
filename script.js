@@ -47,6 +47,7 @@ function showChapter(id) {
     .then(response => response.json())
     .then(chapter => {
       revealContent(chapter.content);
+      handleAutoAdvance(chapter.autoAdvance);
     })
     .catch(error => console.error(`Failed to load ${id}:`, error));
 }
@@ -229,6 +230,27 @@ function revealContent(contentArray) {
   }
 
   next();
+}
+
+function handleAutoAdvance(autoAdvance) {
+  if (!autoAdvance) return;
+
+  const { type, delay, target, next } = autoAdvance;
+
+  if (type === "timeout" && delay && next) {
+    activeTimeouts.push(setTimeout(() => showChapter(next), delay));
+  }
+
+  if (type === "mediaEnd" && target && next) {
+    const checkMediaReady = setInterval(() => {
+      const mediaEls = Array.from(document.querySelectorAll("video, audio"));
+      const match = mediaEls.find(el => el.src.includes(target));
+      if (match) {
+        clearInterval(checkMediaReady);
+        match.addEventListener("ended", () => showChapter(next));
+      }
+    }, 100);
+  }
 }
 
 function toggleNav() {
