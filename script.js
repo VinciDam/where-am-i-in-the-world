@@ -4,10 +4,12 @@ const contentEl = document.getElementById("content");
 const activeTimeouts = [];
 const DEFAULT_VIDEO_THRESHOLD = 0.5; // seconds
 
+let currentAudio = null;
+
 document.getElementById("toggleNav").addEventListener("click", toggleNav);
 window.onload = () => {
   loadChapters();
-  showChapter("chapter-4");
+  showChapter("chapter-0");
 };
 
 function loadChapters() {
@@ -119,13 +121,20 @@ function revealContent(contentArray) {
       e.preventDefault();
       // clearAllTimeouts(); // stop current content from revealing
   
+      // Stop any currently playing audio
+      if (currentAudio && item.audio) {
+        currentAudio.pause();
+        currentAudio.currentTime = 0;
+        currentAudio = null;
+      }
+
       // Clear content if needed
       contentEl.innerHTML = "";
   
       // Play audio if provided
       if (item.audio) {
-        const audio = new Audio(item.audio);
-        audio.play();
+        currentAudio = new Audio(item.audio);
+        currentAudio.play();
   
         // Optional: wait for audio to finish before navigating
         // audio.onended = () => showChapter(item.link);
@@ -141,7 +150,15 @@ function revealContent(contentArray) {
     contentEl.appendChild(a);
     lastWasValue = true;
     activeTimeouts.push(setTimeout(next, 100));
-  }  
+  }
+
+  function createScrollingSubtitle(text, className, duration) {
+    const subtitle = document.createElement("div");
+    subtitle.classList.add("subtitle", className);
+    subtitle.textContent = text;
+    subtitle.style.animationDuration = `${duration}s`;
+    return subtitle;
+  }
 
   function showVideo(item) {
     // Create the video container
@@ -156,34 +173,39 @@ function revealContent(contentArray) {
     videoEl.muted = true;  // Optionally mute the video
     videoContainer.appendChild(videoEl);
   
-    // Check if subtitles exist and create them
-    if (item.subtitles) {
-      if (item.subtitles.top) {
-        const topSubtitle = document.createElement("div");
-        topSubtitle.classList.add("subtitle", "top-subtitle");
-        topSubtitle.textContent = item.subtitles.top.text;
-        videoContainer.appendChild(topSubtitle);
+    // Wait for video metadata (to get duration)
+    videoEl.addEventListener("loadedmetadata", () => {
+      const duration = videoEl.duration;
+  
+      // Check if subtitles exist and create them
+      if (item.subtitles) {
+        const defaultDuration = 60; // fallback duration in seconds
+      
+        if (item.subtitles.top) {
+          const dur = item.subtitles.top.duration || defaultDuration;
+          const topSubtitle = createScrollingSubtitle(item.subtitles.top.text, "top-subtitle", dur);
+          videoContainer.appendChild(topSubtitle);
+        }
+      
+        if (item.subtitles.bottom) {
+          const dur = item.subtitles.bottom.duration || defaultDuration;
+          const bottomSubtitle = createScrollingSubtitle(item.subtitles.bottom.text, "bottom-subtitle", dur);
+          videoContainer.appendChild(bottomSubtitle);
+        }
       }
       
-      if (item.subtitles.bottom) {
-        const bottomSubtitle = document.createElement("div");
-        bottomSubtitle.classList.add("subtitle", "bottom-subtitle");
-        bottomSubtitle.textContent = item.subtitles.bottom.text;
-        videoContainer.appendChild(bottomSubtitle);
-      }
-    }
+    });
   
     // Append the video container to the content area
     contentEl.appendChild(videoContainer);
-    
+  
     // Scroll to the new content
     contentEl.scrollTop = contentEl.scrollHeight;
   
     // Add a timeout to go to the next piece of content
     lastWasValue = false;
     activeTimeouts.push(setTimeout(next, 100));
-  }
-  
+  }  
 
   function showImage(item) {
     contentEl.appendChild(document.createElement("br"));

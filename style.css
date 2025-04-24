@@ -95,27 +95,39 @@ body {
     overflow: hidden;
   }
   
+  @keyframes scrollLeft {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+  
   .subtitle {
     position: absolute;
-    width: 100%;
     white-space: nowrap;
-    overflow: hidden;
+    overflow: visible;
     pointer-events: none;
-    text-align: center;
     font-size: 1rem;
     color: #fff;
     text-shadow: 1px 1px 3px #000;
+    animation-name: scrollLeft;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    will-change: transform;
   }
   
   .top-subtitle {
     top: 5px;
-    animation: scrollLeft 10s linear infinite;
+    left: 0;
   }
   
   .bottom-subtitle {
     bottom: 5px;
-    animation: scrollLeft 10s linear infinite;
+    left: 0;
   }
+  
 
   .em {
     font-style: italic;
@@ -123,13 +135,4 @@ body {
     background-color: #000;
   }
   
-  
-  @keyframes scrollLeft {
-    0% {
-      transform: translateX(100%);
-    }
-    100% {
-      transform: translateX(-100%);
-    }
-  }
   
