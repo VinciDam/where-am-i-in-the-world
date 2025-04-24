@@ -7,7 +7,7 @@ const DEFAULT_VIDEO_THRESHOLD = 0.5; // seconds
 document.getElementById("toggleNav").addEventListener("click", toggleNav);
 window.onload = () => {
   loadChapters();
-  showChapter("chapter-0");
+  showChapter("chapter-4");
 };
 
 function loadChapters() {
@@ -61,7 +61,9 @@ function revealContent(contentArray) {
 
     const item = contentArray[index++];
 
-    if (typeof item === "string") {
+    if (typeof item === "object" && item.em) {
+      showEmphasizedText(item)
+    } else if (typeof item === "string") {
       showText(item);
     } else if (item.value) {
       showValue(item);
@@ -76,11 +78,14 @@ function revealContent(contentArray) {
     }
   }
 
-  function showText(text) {
-    if (!lastWasValue) contentEl.appendChild(document.createElement("br"));
+  function revealWordsOneByOne(text, className = "", addInitialBreak = true) {
+    if (addInitialBreak && !lastWasValue) {
+      contentEl.appendChild(document.createElement("br"));
+    }
+  
     const words = text.split(" ");
     let wordIndex = 0;
-
+  
     function nextWord() {
       if (wordIndex >= words.length) {
         lastWasValue = false;
@@ -88,12 +93,22 @@ function revealContent(contentArray) {
         return;
       }
       const span = document.createElement("span");
+      if (className) span.className = className;
       span.textContent = words[wordIndex] + (wordIndex < words.length - 1 ? " " : "");
       contentEl.appendChild(span);
       wordIndex++;
       activeTimeouts.push(setTimeout(nextWord, 100));
     }
+  
     nextWord();
+  }
+
+  function showText(text) {
+    revealWordsOneByOne(text);
+  }
+  
+  function showEmphasizedText(text) {
+    revealWordsOneByOne(text.em, "em", false);
   }
 
   function showValue(item) {

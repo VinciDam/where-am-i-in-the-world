@@ -116,6 +116,13 @@ body {
     bottom: 5px;
     animation: scrollLeft 10s linear infinite;
   }
+
+  .em {
+    font-style: italic;
+    color: #ffcc00;
+    background-color: #000;
+  }
+  
   
   @keyframes scrollLeft {
     0% {
