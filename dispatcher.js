@@ -6,21 +6,21 @@ import { showImage } from './renderers/image.js';
 import { showVideoGrid, showImageGrid } from './renderers/grid.js';
 import { showAlphabetRing } from './renderers/alphabetRing.js';
 
-export function dispatchContent(item, next, contentEl, activeTimeouts, lastWasValueRef) {
+export function dispatchContent(item, next, contentEl, activeTimeouts, lastWasValueRef, onValueClick) {
   if (typeof item === "object" && item.em) {
     showEmphasizedText(item, next, contentEl, activeTimeouts, lastWasValueRef);
   } else if (typeof item === "string") {
     showText(item, next, contentEl, activeTimeouts, lastWasValueRef);
   } else if (item.value) {
-    showValue(item, next, contentEl, activeTimeouts, lastWasValueRef);
+    showValue(item, next, contentEl, activeTimeouts, lastWasValueRef, onValueClick);
   } else if (item.video) {
     showVideo(item, next, contentEl, activeTimeouts, lastWasValueRef);
   } else if (item.image) {
     showImage(item, next, contentEl, activeTimeouts, lastWasValueRef);
   } else if (item.videoGrid) {
-    showVideoGrid(item.videoGrid, next, contentEl, activeTimeouts, lastWasValueRef);
+    showVideoGrid(item, next, contentEl, activeTimeouts, lastWasValueRef);
   } else if (item.imageGrid) {
-    showImageGrid(item.imageGrid, next, contentEl, activeTimeouts, lastWasValueRef);
+    showImageGrid(item, next, contentEl, activeTimeouts, lastWasValueRef);
   } else if (item.alphabetRing) {
     showAlphabetRing(item.alphabetRing, next, contentEl, activeTimeouts, lastWasValueRef);
   } else {

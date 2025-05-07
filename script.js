@@ -8,8 +8,12 @@ const activeTimeouts = [];
 document.getElementById("toggleNav").addEventListener("click", toggleNav);
 window.onload = () => {
   loadChapters();
-  showChapter("chapter-0");
+  showChapter("chapter-1");
 };
+
+function onValueClick(link) {
+  showChapter(link); // This was previously hardcoded inside showValue
+}
 
 function loadChapters() {
   const navEl = document.querySelector("#nav ul");
@@ -40,7 +44,7 @@ function clearTimeouts() {
   activeTimeouts.length = 0;
 }
 
-function showChapter(id) {
+export function showChapter(id) {
   clearTimeouts();
   contentEl.innerHTML = "";
 
@@ -63,8 +67,7 @@ function revealContent(contentArray, lastWasValueRef) {
 
     const item = contentArray[index++];
 
-    dispatchContent(item, next, contentEl, activeTimeouts, lastWasValueRef);
-
+    dispatchContent(item, next, contentEl, activeTimeouts, lastWasValueRef, onValueClick);
   }
 
   next();
@@ -91,6 +94,6 @@ function handleAutoAdvance(autoAdvance) {
   }
 }
 
-function toggleNav() {
+export function toggleNav() {
   document.getElementById("nav").classList.toggle("hidden");
 }
