@@ -57,11 +57,30 @@ export function showAlphabetRing(phrase, next, contentEl, activeTimeouts, lastWa
   
       const word = words[index++];
       const activeLetters = new Set(word.toUpperCase());
-      center.textContent = word;
+      
+      // Clear previous content
+      center.innerHTML = "";
+
+      // English word
+      const englishSpan = document.createElement("span");
+      englishSpan.textContent = word;
+
+      // Translated word (custom script)
+      const customSpan = document.createElement("div");
+      customSpan.textContent = translateToJellyScript(word); // <-- Add this function below
+      customSpan.className = "jelly-script";
+
+      center.appendChild(englishSpan);
+      // center.appendChild(document.createTextNode(" | "));
+      center.appendChild(customSpan);
   
       updateVideoVisibility(activeLetters);
   
       activeTimeouts.push(setTimeout(showNextWord, 1200));
+    }
+
+    function translateToJellyScript(word) {
+      return word; // Just use the same letters, rendered in the .otf font
     }
   
     createAlphabetVideos();

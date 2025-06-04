@@ -1,10 +1,22 @@
 body {
-    font-family: sans-serif;
-    background: #000;
-    color: #eee;
+    font-family: 'Inconsolata', monospace;
+    font-size: 16px;
+    background: #fff;
+    color: #000;
     line-height: 1.8;
     margin: 0;
     padding: 1rem;
+  }
+
+  @font-face {
+    font-family: 'jellyScript';
+    src: url('fonts/jellyScript.otf') format('opentype');
+  }
+  
+  .jelly-script {
+    font-family: 'jellyScript', sans-serif;
+    margin-left: 10px;
+    font-size: 1.2em;
   }
   
   #toggleNav {
@@ -12,8 +24,8 @@ body {
     top: 1rem;
     left: 1rem;
     z-index: 10;
-    background: #333;
-    color: #eee;
+    background: #fff;
+    color: black;
     border: none;
     padding: 0.5rem 1rem;
     cursor: pointer;
@@ -58,7 +70,7 @@ body {
   }
   
   a {
-    color: #66ccff;
+    color: blue;
     text-decoration: underline;
     cursor: pointer;
   }
@@ -131,8 +143,8 @@ body {
 
   .em {
     font-style: italic;
-    color: #ffcc00;
-    background-color: #000;
+    color: #000;
+    background-color: #fff;
   }
 
   /* Alphabet ring container */
@@ -162,7 +174,7 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 2rem;
-  color: #fff;
+  color: black;
   text-align: center;
   z-index: 10;
 }
