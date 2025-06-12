@@ -187,3 +187,7 @@ body {
 .content-image.visible {
   opacity: 1;
 }
+
+.preserve-whitespace {
+  white-space: pre-wrap;
+}
