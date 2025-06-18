@@ -1,7 +1,6 @@
-import { showChapter } from '../script.js'; // May need to adjust path depending on structure
-import { toggleNav } from '../script.js';   // Same here
-
-let currentAudio = null;
+import { showChapter } from '../script.js';
+import { toggleNav } from '../script.js';
+import { playSoundFromUrl, playReversedSoundFromUrl } from '../audio/audioEngine.js';
 
 export function showValue(item, next, contentEl, activeTimeouts, lastWasValueRef) {
   const a = document.createElement("a");
@@ -11,17 +10,9 @@ export function showValue(item, next, contentEl, activeTimeouts, lastWasValueRef
   a.onclick = (e) => {
     e.preventDefault();
 
-    // Stop current audio if playing
-    if (currentAudio) {
-      currentAudio.pause();
-      currentAudio.currentTime = 0;
-      currentAudio = null;
-    }
-
-    // Play new audio, if any
     if (item.audio) {
-      currentAudio = new Audio(item.audio);
-      currentAudio.play(); // Don't block chapter loading
+      // playSoundFromUrl(item.audio);
+      playReversedSoundFromUrl(item.audio)
     }
 
     // Navigate immediately

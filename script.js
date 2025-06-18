@@ -1,6 +1,11 @@
 // script.js
 
 import { dispatchContent } from './dispatcher.js';
+import { ensureInitialized } from '../audio/audioEngine.js';
+
+document.addEventListener('click', () => {
+  ensureInitialized();
+}, { once: true }); // Only needs to run once
 
 const contentEl = document.getElementById("content");
 const activeTimeouts = [];
