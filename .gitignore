@@ -1,0 +1,19 @@
+# Ignore media files
+*.mp3
+*.mp4
+*.mov
+*.jpg
+*.jpeg
+*.png
+
+# macOS system files
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+
+# Node or general dev environment
+node_modules/
+dist/
+build/
+.env
