@@ -1,7 +1,8 @@
 // script.js
 
 import { dispatchContent } from './dispatcher.js';
-import { ensureInitialized } from '../audio/audioEngine.js';
+import { ensureInitialized } from './audio/audioEngine.js';
+import { stopChapterAudio } from './audio/audioEngine.js';
 
 document.addEventListener('click', () => {
   ensureInitialized();
@@ -13,7 +14,7 @@ const activeTimeouts = [];
 document.getElementById("toggleNav").addEventListener("click", toggleNav);
 window.onload = () => {
   loadChapters();
-  showChapter("chapter-1");
+  showChapter("chapter-purple-tuft");
 };
 
 function onValueClick(link) {
@@ -50,6 +51,9 @@ function clearTimeouts() {
 }
 
 export function showChapter(id) {
+
+  stopChapterAudio();
+
   clearTimeouts();
   contentEl.innerHTML = "";
 
