@@ -24,7 +24,10 @@ export function showImage(item, next, contentEl, activeTimeouts, lastWasValueRef
     img.className = "content-image";
     img.style.display = "block";
     img.style.margin = "1rem 0";
+
+    // Get additional properties from "image" field in json
     if (item.width) img.style.width = item.width;
+    if (item.marginLeft) img.style.marginLeft = item.marginLeft;
 
     contentEl.appendChild(img);
     lastWasValueRef.current = false;
