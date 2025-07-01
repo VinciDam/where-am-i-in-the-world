@@ -1,11 +1,12 @@
 // script.js
 
 import { dispatchContent } from './dispatcher.js';
-import { ensureInitialized } from './audio/audioEngine.js';
-import { stopChapterAudio } from './audio/audioEngine.js';
+import { ensureInitialized, stopChapterAudio } from './audio/audioEngine.js';
+import {  startAmbientSnippets } from './audio/ambient.js';
 
 document.addEventListener('click', () => {
   ensureInitialized();
+  startAmbientSnippets();
 }, { once: true }); // Only needs to run once
 
 const contentEl = document.getElementById("content");
