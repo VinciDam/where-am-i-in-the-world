@@ -28,7 +28,7 @@ export function showAnimatedImage(item, next, contentEl, activeTimeouts, lastWas
         const duration = item.duration || 5000;
 
         // ensure the duck *exits* fully:
-        const endX = item.endX || "120%";
+        const endX = item.endX || "130%";
         const endY = item.endY || "50%";
 
         img.style.transition = `left ${duration}ms linear, top ${duration}ms linear`;
@@ -39,3 +39,42 @@ export function showAnimatedImage(item, next, contentEl, activeTimeouts, lastWas
         activeTimeouts.push(setTimeout(next, delay));
     };
 }
+
+export function showScalingImage(item, next, contentEl, activeTimeouts, lastWasValueRef) {
+    // Remove any existing animated image
+    const existingImg = contentEl.querySelector(".animated-image");
+    if (existingImg) existingImg.remove();
+
+    const img = document.createElement("img");
+    img.src = item.scalingImage;
+    img.alt = item.alt || "";
+    img.className = "animated-image";
+    img.style.position = "absolute";
+    img.style.display = "block";
+    img.style.maxWidth = item.width || "200px";
+    img.style.transformOrigin = "center center";
+    
+    // starting location
+    img.style.left = item.startX || "50%";
+    img.style.top  = item.startY  || "50%";
+    img.style.transform = `translate(-50%, -50%) scale(${item.startScale || 0.5})`;
+
+    contentEl.appendChild(img);
+    lastWasValueRef.current = false;
+
+    img.onload = () => {
+        void img.offsetWidth; // force reflow
+
+        const duration = item.duration || 4000;
+        const targetScale = item.endScale || 1.0;
+
+        img.style.transition = `transform ${duration}ms ease-in-out`;
+
+        // Animate
+        img.style.transform = `translate(-50%, -50%) scale(${targetScale})`;
+
+        const delay = item.replaceAfter || duration + 100;
+        activeTimeouts.push(setTimeout(next, delay));
+    };
+}
+
