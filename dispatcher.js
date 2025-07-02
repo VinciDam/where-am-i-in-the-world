@@ -5,6 +5,7 @@ import { showVideo } from './renderers/video.js';
 import { showImage } from './renderers/image.js';
 import { showVideoGrid, showImageGrid } from './renderers/grid.js';
 import { showAlphabetRing } from './renderers/alphabetRing.js';
+import { showAnimatedImage } from './renderers/animatedImage.js';
 
 export function dispatchContent(item, next, contentEl, activeTimeouts, lastWasValueRef, onValueClick) {
   if (typeof item === "object" && item.em) {
@@ -23,6 +24,8 @@ export function dispatchContent(item, next, contentEl, activeTimeouts, lastWasVa
     showImageGrid(item, next, contentEl, activeTimeouts, lastWasValueRef);
   } else if (item.alphabetRing) {
     showAlphabetRing(item.alphabetRing, next, contentEl, activeTimeouts, lastWasValueRef);
+  } else if (item.animatedImage) {
+    showAnimatedImage(item, next, contentEl, activeTimeouts, lastWasValueRef);
   } else {
     next(); // unknown content; skip
   }

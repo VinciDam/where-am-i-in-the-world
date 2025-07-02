@@ -179,8 +179,10 @@ body {
 }
 
 .content-image {
+  position: absolute;
   opacity: 0;
   transition: opacity 0.7s ease-in-out;
+  will-change: transform;
 }
 
 .content-image.visible {
@@ -189,4 +191,10 @@ body {
 
 .preserve-whitespace {
   white-space: pre-wrap;
+}
+
+.animated-image {
+  max-width: 1000px;
+  transform: translate(-50%, -50%);
+  position: absolute;
 }
