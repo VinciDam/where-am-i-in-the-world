@@ -67,12 +67,16 @@ body {
     padding: 20px 10px 10px 10px;
     max-width: 800px;
     margin: auto;
+    position: relative;
+    z-index: 1;
   }
   
   a {
     color: blue;
     text-decoration: underline;
     cursor: pointer;
+    position: relative;
+    z-index: 1;
   }
 
   video.autoplay-video {
@@ -199,3 +203,20 @@ body {
   position: absolute;
   pointer-events: none;
 }
+
+#background-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none; /* allow clicks through */
+}
+
+#background-layer img {
+  position: absolute;
+  max-width: 100%;
+  will-change: transform;
+}
+

@@ -6,6 +6,7 @@ import { showImage } from './renderers/image.js';
 import { showVideoGrid, showImageGrid } from './renderers/grid.js';
 import { showAlphabetRing } from './renderers/alphabetRing.js';
 import { showAnimatedImage, showScalingImage } from './renderers/animatedImage.js';
+import { setBackgroundImages, clearBackgroundImages } from './renderers/background.js';
 
 export function dispatchContent(item, next, contentEl, activeTimeouts, lastWasValueRef, onValueClick) {
   if (typeof item === "object" && item.em) {
@@ -16,6 +17,12 @@ export function dispatchContent(item, next, contentEl, activeTimeouts, lastWasVa
     showValue(item, next, contentEl, activeTimeouts, lastWasValueRef, onValueClick);
   } else if (item.video) {
     showVideo(item, next, contentEl, activeTimeouts, lastWasValueRef);
+  } else if (item.backgroundImages) {
+    setBackgroundImages(item);
+    next();
+  } else if (item.clearBackground) {
+    clearBackgroundImages();
+    next();
   } else if (item.image) {
     showImage(item, next, contentEl, activeTimeouts, lastWasValueRef);
   } else if (item.videoGrid) {

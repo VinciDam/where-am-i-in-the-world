@@ -15,7 +15,7 @@ const activeTimeouts = [];
 document.getElementById("toggleNav").addEventListener("click", toggleNav);
 window.onload = () => {
   loadChapters();
-  showChapter("chapter-purple-tuft");
+  showChapter("chapter-0-BG");
 };
 
 function onValueClick(link) {
@@ -70,7 +70,6 @@ export function showChapter(id) {
 
 function revealContent(contentArray, lastWasValueRef) {
   let index = 0;
-  let lastWasValue = false;
 
   function next() {
     if (index >= contentArray.length) return;
