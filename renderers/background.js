@@ -1,17 +1,40 @@
 export function setBackgroundImages(item) {
-    const bgLayer = document.getElementById("background-layer");
-  
-    item.backgroundImages.forEach(bg => {
-      let img = document.createElement("img");
-      img.src = bg.src;
-      img.style.top = bg.top || "auto";
-      img.style.bottom = bg.bottom || "auto";
-      img.style.left = bg.left || "auto";
-      img.style.right = bg.right || "auto";
-      img.style.width = bg.width || "auto";
-      bgLayer.appendChild(img);
-    });
-  }
+  clearBackgroundImages();
+
+  item.backgroundImages.forEach((img) => {
+    const bg = document.createElement("img");
+    bg.src = img.src;
+    bg.classList.add("background-image");
+    
+    bg.style.position = "absolute";
+    bg.style.top = img.top || "50%";
+    bg.style.width = img.width || "auto";
+    bg.style.zIndex = -1;
+
+    // interpret img.position
+    if (img.position === "left") {
+      bg.style.left = "0";
+    } else if (img.position === "right") {
+      bg.style.right = "0";
+    } else if (img.position === "center") {
+      bg.style.left = "50%";
+      bg.style.transform = (bg.style.transform || "") + " translateX(-50%)";
+    } else if (img.position) {
+      // numeric coordinate
+      bg.style.left = img.position;
+    } else {
+      bg.style.left = "50%";
+      bg.style.transform = (bg.style.transform || "") + " translateX(-50%)";
+    }
+
+    if (img.rotate) {
+      bg.style.transform = `rotate(${img.rotate}deg)`;
+      bg.style.transformOrigin = "center center";
+    }
+
+    document.body.appendChild(bg);
+  });
+}
   
 export function clearBackgroundImages() {
   const bgLayer = document.getElementById("background-layer");
