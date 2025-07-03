@@ -11,7 +11,6 @@ export function setBackgroundImages(item) {
     bg.style.width = img.width || "auto";
     bg.style.zIndex = -1;
 
-    // interpret img.position
     if (img.position === "left") {
       bg.style.left = "0";
     } else if (img.position === "right") {
@@ -20,7 +19,6 @@ export function setBackgroundImages(item) {
       bg.style.left = "50%";
       bg.style.transform = (bg.style.transform || "") + " translateX(-50%)";
     } else if (img.position) {
-      // numeric coordinate
       bg.style.left = img.position;
     } else {
       bg.style.left = "50%";
@@ -32,11 +30,13 @@ export function setBackgroundImages(item) {
       bg.style.transformOrigin = "center center";
     }
 
-    document.body.appendChild(bg);
+    const bgLayer = document.getElementById("background-layer");
+    bgLayer.appendChild(bg);
   });
 }
   
 export function clearBackgroundImages() {
   const bgLayer = document.getElementById("background-layer");
   bgLayer.innerHTML = "";
+  bgLayer.style.backgroundImage = "";
 }
