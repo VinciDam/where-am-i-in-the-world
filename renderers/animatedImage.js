@@ -65,3 +65,40 @@ export function showScalingImage(item, next, activeTimeouts, lastWasValueRef) {
         activeTimeouts.push(setTimeout(next, delay));
     };
 }
+
+export function showReplicatedImages(item, next, activeTimeouts, lastWasValueRef) {
+    const animationLayer = document.getElementById("animation-layer");
+    const existing = animationLayer.querySelectorAll(".animated-image");
+    existing.forEach(el => el.remove());
+
+    const coords = item.coordinates || [];
+    const interval = item.interval || 300;
+    const replaceAfter = item.replaceAfter || coords.length * interval + 100;
+
+    let index = 0;
+
+    function placeNext() {
+        if (index >= coords.length) return;
+
+        const img = createAnimatedImage({
+            animatedImage: item.replicateImage,
+            width: item.width || "200px"
+        });
+
+        img.style.left = coords[index].x || "50%";
+        img.style.top  = coords[index].y || "50%";
+        img.style.transform = "translate(-50%, -50%)";
+
+        animationLayer.appendChild(img);
+
+        index++;
+        if (index < coords.length) {
+            activeTimeouts.push(setTimeout(placeNext, interval));
+        }
+    }
+
+    placeNext();
+
+    activeTimeouts.push(setTimeout(next, replaceAfter));
+    lastWasValueRef.current = false;
+}
