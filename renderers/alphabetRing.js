@@ -10,53 +10,48 @@ export function showAlphabetRing(phrase, next, contentEl, activeTimeouts, lastWa
     center.className = "alphabet-ring-center";
     wrapper.appendChild(center);
   
-    const radius = 60;
     const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    const videoMap = {};
+    const imageMap = {};
   
-    // Helper function to create video elements and position them
-    function createAlphabetVideos() {
+    // Helper function to create image elements and position them
+    function createAlphabetImages() {
       const wrapperSize = wrapper.offsetWidth;
       const numLetters = letters.length;
     
-      // Estimate optimal video size (based on arc length and screen space)
-      const maxVideoSize = wrapperSize * 0.1; // max 10% of wrapper
+      // Estimate optimal image size (based on arc length and screen space)
+      const maxImageSize = wrapperSize * 0.1; // max 10% of wrapper
       const angleBetween = (2 * Math.PI) / numLetters;
     
-      const radius = (wrapperSize / 2) - (maxVideoSize / 2); // keep inside bounds
-      const videoSize = 2 * radius * Math.sin(angleBetween / 2); // approx tangent spacing
+      const radius = (wrapperSize / 2) - (maxImageSize / 2); // keep inside bounds
+      const imageSize = 2 * radius * Math.sin(angleBetween / 2); // approx tangent spacing
     
-      wrapper.style.setProperty('--video-size', `${Math.min(videoSize, maxVideoSize)}px`);
+      wrapper.style.setProperty('--image-size', `${Math.min(imageSize, maxImageSize)}px`);
     
       for (let i = 0; i < numLetters; i++) {
         const letter = letters[i];
         const angle = angleBetween * i;
     
-        const video = document.createElement("video");
-        video.src = `videos/alphabet/${letter.toLowerCase()}.mp4`;
-        video.loop = true;
-        video.autoplay = true;
-        video.muted = true;
-        video.playsInline = true;
-        video.className = "alphabet-ring-video";
+        const img = document.createElement("img");
+        img.src = `images/alphabet/${letter.toLowerCase()}.png`;
+        img.className = "alphabet-ring-image";
     
         const x = 50 + Math.cos(angle) * (radius / wrapperSize) * 100;
         const y = 50 + Math.sin(angle) * (radius / wrapperSize) * 100;
     
-        video.style.left = `${x}%`;
-        video.style.top = `${y}%`;
-        video.style.opacity = "0";
+        img.style.left = `${x}%`;
+        img.style.top = `${y}%`;
+        img.style.opacity = "0";
     
-        wrapper.appendChild(video);
-        videoMap[letter] = video;
+        wrapper.appendChild(img);
+        imageMap[letter] = img;
       }
     }
   
-    // Helper function to update video visibility based on the word
-    function updateVideoVisibility(activeLetters) {
+    // Helper function to update image visibility based on the word
+    function updateImageVisibility(activeLetters) {
       for (const letter of letters) {
-        const video = videoMap[letter];
-        video.style.opacity = activeLetters.has(letter) ? "1" : "0";
+        const img = imageMap[letter];
+        img.style.opacity = activeLetters.has(letter) ? "1" : "0";
       }
     }
   
@@ -86,10 +81,9 @@ export function showAlphabetRing(phrase, next, contentEl, activeTimeouts, lastWa
       customSpan.className = "jelly-script";
 
       center.appendChild(englishSpan);
-      // center.appendChild(document.createTextNode(" | "));
       center.appendChild(customSpan);
   
-      updateVideoVisibility(activeLetters);
+      updateImageVisibility(activeLetters);
   
       activeTimeouts.push(setTimeout(showNextWord, 1200));
     }
@@ -98,7 +92,7 @@ export function showAlphabetRing(phrase, next, contentEl, activeTimeouts, lastWa
       return word; // Just use the same letters, rendered in the .otf font
     }
   
-    createAlphabetVideos();
+    createAlphabetImages();
     showNextWord();
   }
   

@@ -159,10 +159,10 @@ body {
   margin: auto;
 }
 
-.alphabet-ring-video {
+.alphabet-ring-image {
   position: absolute;
-  width: var(--video-size, 40px);
-  height: var(--video-size, 40px);
+  width: var(--image-size, 40px);
+  height: var(--image-size, 40px);
   object-fit: cover;
   transform: translate(-50%, -50%);
   transition: opacity 0.5s ease;
