@@ -15,7 +15,7 @@ const activeTimeouts = [];
 document.getElementById("toggleNav").addEventListener("click", toggleNav);
 window.onload = () => {
   loadChapters();
-  showChapter("chapter-0-BG");
+  showChapter("chapter-reeds");
 };
 
 function onValueClick(link) {
@@ -57,6 +57,11 @@ export function showChapter(id) {
 
   clearTimeouts();
   contentEl.innerHTML = "";
+
+  const animationLayer = document.getElementById("animation-layer");
+  if (animationLayer) {
+    animationLayer.innerHTML = "";
+  }
 
   fetch(`chapters/${id}.json`)
     .then(response => response.json())
