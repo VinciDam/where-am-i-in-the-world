@@ -1,5 +1,5 @@
 import { showChapter } from '../script.js';
-import { toggleNav } from '../script.js';
+// import { toggleNav } from '../script.js';
 import { playSoundFromUrl, playReversedSoundFromUrl, startBackgroundOnce } from '../audio/audioEngine.js';
 
 export function showValue(item, next, contentEl, activeTimeouts, lastWasValueRef) {

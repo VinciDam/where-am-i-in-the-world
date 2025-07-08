@@ -12,38 +12,12 @@ document.addEventListener('click', () => {
 const contentEl = document.getElementById("content");
 const activeTimeouts = [];
 
-document.getElementById("toggleNav").addEventListener("click", toggleNav);
 window.onload = () => {
-  loadChapters();
-  showChapter("chapter-reeds");
+  showChapter("chapter-cold");
 };
 
 function onValueClick(link) {
   showChapter(link); // This was previously hardcoded inside showValue
-}
-
-function loadChapters() {
-  const navEl = document.querySelector("#nav ul");
-
-  fetch("chapters/index.json")
-    .then(response => response.json())
-    .then(chapterList => {
-      navEl.innerHTML = "";
-      chapterList.forEach(chapter => {
-        const li = document.createElement("li");
-        const a = document.createElement("a");
-        a.href = "#";
-        a.textContent = chapter.title;
-        a.onclick = (e) => {
-          e.preventDefault();
-          showChapter(chapter.id);
-          toggleNav();
-        };
-        li.appendChild(a);
-        navEl.appendChild(li);
-      });
-    })
-    .catch(error => console.error("Failed to load chapter list:", error));
 }
 
 function clearTimeouts() {
@@ -106,8 +80,4 @@ function handleAutoAdvance(autoAdvance) {
       }
     }, 100);
   }
-}
-
-export function toggleNav() {
-  document.getElementById("nav").classList.toggle("hidden");
 }
