@@ -1,32 +1,49 @@
 export function setBackgroundImages(item) {
-  clearBackgroundImages();
+
+  // clearBackgroundImages();
 
   item.backgroundImages.forEach((img) => {
     const bg = document.createElement("img");
     bg.src = img.src;
     bg.classList.add("background-image");
-    
-    bg.style.position = "absolute";
-    bg.style.top = img.top || "50%";
-    bg.style.width = img.width || "auto";
-    bg.style.zIndex = -1;
 
-    if (img.position === "left") {
-      bg.style.left = "0";
-    } else if (img.position === "right") {
-      bg.style.right = "0";
-    } else if (img.position === "center") {
-      bg.style.left = "50%";
-      bg.style.transform = (bg.style.transform || "") + " translateX(-50%)";
-    } else if (img.position) {
-      bg.style.left = img.position;
-    } else {
-      bg.style.left = "50%";
-      bg.style.transform = (bg.style.transform || "") + " translateX(-50%)";
+    bg.style.position = "absolute";
+    bg.style.zIndex = -1;
+    bg.style.width = img.width || "auto";
+
+    // Horizontal positioning
+    switch (img.horizontal) {
+      case "left":
+        bg.style.left = "0";
+        break;
+      case "right":
+        bg.style.right = "0";
+        break;
+      case "center":
+      default:
+        bg.style.left = "50%";
+        bg.style.transform = (bg.style.transform || "") + " translateX(-50%)";
+        break;
     }
 
+    // Vertical positioning
+    switch (img.vertical) {
+      case "top":
+        bg.style.top = "0";
+        break;
+      case "bottom":
+        bg.style.bottom = "0";
+        break;
+      case "center":
+      default:
+        bg.style.top = "50%";
+        bg.style.transform = (bg.style.transform || "") + " translateY(-50%)";
+        break;
+    }
+
+    // Combine transforms (if both X and Y centering or rotation is needed)
     if (img.rotate) {
-      bg.style.transform = `rotate(${img.rotate}deg)`;
+      bg.style.transform = (bg.style.transform || "") + ` rotate(${img.rotate}deg)`;
       bg.style.transformOrigin = "center center";
     }
 
@@ -34,6 +51,7 @@ export function setBackgroundImages(item) {
     bgLayer.appendChild(bg);
   });
 }
+  
   
 export function clearBackgroundImages() {
   const bgLayer = document.getElementById("background-layer");
