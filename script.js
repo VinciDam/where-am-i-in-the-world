@@ -2,7 +2,7 @@
 
 import { dispatchContent } from './dispatcher.js';
 import { ensureInitialized, stopChapterAudio } from './audio/audioEngine.js';
-import {  startAmbientSnippets } from './audio/ambient.js';
+import { startAmbientSnippets } from './audio/ambient.js';
 
 document.addEventListener('click', () => {
   ensureInitialized();
@@ -13,7 +13,7 @@ const contentEl = document.getElementById("content");
 const activeTimeouts = [];
 
 window.onload = () => {
-  showChapter("chapter-cold");
+  showChapter("chapter-beginning");
 };
 
 function onValueClick(link) {
@@ -25,10 +25,23 @@ function clearTimeouts() {
   activeTimeouts.length = 0;
 }
 
+function estimateTopMargin(contentArray) {
+  let wordCount = contentArray.reduce((acc, item) => {
+    if (typeof item === 'string') {
+      return acc + item.split(/\s+/).length;
+    } else if (typeof item === 'object' && typeof item.value === 'string') {
+      return acc + item.value.split(/\s+/).length;
+    }
+    return acc;
+  }, 0);
+
+  // E.g., longer text = smaller margin, capped between 5vh and 30vh
+  const estimated = Math.max(5, 30 - wordCount / 3);
+  return `${estimated}vh`;
+}
+
 export function showChapter(id) {
-
   stopChapterAudio();
-
   clearTimeouts();
   contentEl.innerHTML = "";
 
@@ -40,6 +53,25 @@ export function showChapter(id) {
   fetch(`chapters/${id}.json`)
     .then(response => response.json())
     .then(chapter => {
+      // --- Dynamic content margin control ---
+      if (chapter.marginTop) {
+        contentEl.style.setProperty('--content-margin-top', chapter.marginTop);
+      } else { 
+        contentEl.style.setProperty('--content-margin-top', '25vh'); // fallback
+      }
+
+      // NOTE: replace else clause with commented text below for text-based margin estimate
+      // } else {
+      //   const estimatedTop = estimateTopMargin(chapter.content);
+      //   contentEl.style.setProperty('--content-margin-top', estimatedTop);
+      // }
+
+      if (chapter.marginBottom) {
+        contentEl.style.setProperty('--content-margin-bottom', chapter.marginBottom);
+      } else {
+        contentEl.style.setProperty('--content-margin-bottom', '5vh'); // fallback
+      }
+
       const lastWasValueRef = { value: false };
       revealContent(chapter.content, lastWasValueRef);
       handleAutoAdvance(chapter.autoAdvance);
