@@ -9,6 +9,11 @@ export function showVideo(item, next, contentEl, activeTimeouts, lastWasValueRef
     videoEl.classList.add("autoplay-video");
     videoEl.autoplay = true;
     videoEl.muted = true;
+
+    if (item.width) {
+      videoEl.style.width = item.width;
+    }
+
     videoContainer.appendChild(videoEl);
   
     // Wait for video metadata (to get duration)

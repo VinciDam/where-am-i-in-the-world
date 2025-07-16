@@ -14,7 +14,8 @@ export function dispatchContent(item, next, contentEl, activeTimeouts, lastWasVa
   } else if (typeof item === "string") {
     showText(item, next, contentEl, activeTimeouts, lastWasValueRef);
   } else if (item.clearText) {
-    clearTextThenNext(contentEl, next, activeTimeouts);
+    const delay = typeof item.delay === "number" ? item.delay : 1000;
+    clearTextThenNext(contentEl, next, activeTimeouts, delay);
   } else if (item.value) {
     showValue(item, next, contentEl, activeTimeouts, lastWasValueRef, onValueClick);
   } else if (item.video) {
