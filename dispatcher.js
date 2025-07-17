@@ -5,7 +5,8 @@ import { showVideo } from './renderers/video.js';
 import { showImage } from './renderers/image.js';
 import { showVideoGrid, showImageGrid } from './renderers/grid.js';
 import { showAlphabetRing } from './renderers/alphabetRing.js';
-import { showAnimatedImage, showReplicatedImages, showScalingImage } from './renderers/animatedImage.js';
+import { showAnimatedImage, showReplicatedImages, 
+  showScalingImage, showAnimatedSquiggle } from './renderers/animatedImage.js';
 import { setBackgroundImages, clearBackgroundImages } from './renderers/background.js';
 
 export function dispatchContent(item, next, contentEl, activeTimeouts, lastWasValueRef, onValueClick) {
@@ -40,6 +41,8 @@ export function dispatchContent(item, next, contentEl, activeTimeouts, lastWasVa
     showScalingImage(item, next, activeTimeouts, lastWasValueRef);
   } else if (item.replicateImage) {
     showReplicatedImages(item, next, activeTimeouts, lastWasValueRef);
+  } else if (item.squiggleSvg) {
+    showAnimatedSquiggle(item, next, activeTimeouts, lastWasValueRef);
   } else {
     next(); // unknown content; skip
   }

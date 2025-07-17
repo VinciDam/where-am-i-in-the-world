@@ -102,3 +102,45 @@ export function showReplicatedImages(item, next, activeTimeouts, lastWasValueRef
     activeTimeouts.push(setTimeout(next, replaceAfter));
     lastWasValueRef.current = false;
 }
+
+export async function showAnimatedSquiggle(item, next, activeTimeouts, lastWasValueRef) {
+    const animationLayer = document.getElementById("animation-layer");
+  
+    const existing = animationLayer.querySelector(".squiggle-container");
+    if (existing) existing.remove();
+  
+    // Fetch the SVG
+    const response = await fetch(item.squiggleSvg);
+    const svgText = await response.text();
+  
+    // Create container and inject SVG
+    const container = document.createElement("div");
+    container.className = "squiggle-container";
+    container.style.position = "absolute";
+    container.style.left = item.left || "50%";
+    container.style.top = item.top || "50%";
+    container.style.transform = "translate(-50%, -50%)";
+    container.innerHTML = svgText;
+    animationLayer.appendChild(container);
+  
+    // Select path(s) and animate them
+    const paths = container.querySelectorAll("path");
+    paths.forEach(path => {
+        const length = path.getTotalLength();
+      
+        path.style.strokeDasharray = length;
+        path.style.strokeDashoffset = length;
+      
+        // Set stroke color from JSON (fallback to black)
+        path.style.stroke = item.stroke || "black";
+        path.style.strokeWidth = item.strokeWidth || "4";
+      
+        path.style.animation = `draw ${item.duration || 3000}ms linear forwards`;
+      });
+  
+    lastWasValueRef.current = false;
+  
+    const delay = item.duration || 3000;
+    activeTimeouts.push(setTimeout(next, delay));
+  }
+  

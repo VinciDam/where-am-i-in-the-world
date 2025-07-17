@@ -65,6 +65,8 @@ body {
     width: 80%;
     margin: 2rem auto;
     overflow: hidden;
+    border: none;
+    box-shadow: none;
   }
   
   @keyframes scrollLeft {
@@ -169,6 +171,18 @@ body {
   overflow: hidden;
   pointer-events: none; /* so clicks pass through */
   z-index: 1000;
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.squiggle-container path {
+  fill: none;
+  stroke: black;
+  stroke-width: 4;
 }
 
 #background-layer {
