@@ -10,8 +10,9 @@ export function showVideo(item, next, contentEl, activeTimeouts, lastWasValueRef
     videoEl.autoplay = true;
     videoEl.muted = true;
 
+    // TODO: allow left/centre/right video pos from json
     if (item.width) {
-      videoEl.style.width = item.width;
+      videoContainer.style.width = item.width;
     }
 
     videoContainer.appendChild(videoEl);

@@ -60,10 +60,10 @@ body {
   }
 
   .video-container {
-    position: relative;
-    display: inline-block;
+    display: block;
+    max-width: 100%;           /* ensures it doesn't overflow content box */
     width: 80%;
-    margin: 20px 0;
+    margin: 2rem auto;
     overflow: hidden;
   }
   
