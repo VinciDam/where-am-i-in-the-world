@@ -6,7 +6,7 @@ import { showImage } from './renderers/image.js';
 import { showVideoGrid, showImageGrid } from './renderers/grid.js';
 import { showAlphabetRing } from './renderers/alphabetRing.js';
 import { showAnimatedImage, showReplicatedImages, 
-  showScalingImage, showAnimatedSquiggle } from './renderers/animatedImage.js';
+  showScalingImage, showAnimatedSquiggle, showCircularAnimatedImage } from './renderers/animatedImage.js';
 import { setBackgroundImages, clearBackgroundImages } from './renderers/background.js';
 
 export function dispatchContent(item, next, contentEl, activeTimeouts, lastWasValueRef, onValueClick) {
@@ -37,6 +37,8 @@ export function dispatchContent(item, next, contentEl, activeTimeouts, lastWasVa
     showAlphabetRing(item.alphabetRing, next, contentEl, activeTimeouts, lastWasValueRef);
   } else if (item.animatedImage) {
     showAnimatedImage(item, next, activeTimeouts, lastWasValueRef);
+  } else if (item.circularAnimatedImage) {
+    showCircularAnimatedImage(item, next, activeTimeouts, lastWasValueRef);
   } else if (item.scalingImage) {
     showScalingImage(item, next, activeTimeouts, lastWasValueRef);
   } else if (item.replicateImage) {

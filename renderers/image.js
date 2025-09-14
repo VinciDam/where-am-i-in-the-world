@@ -28,6 +28,7 @@ export function showImage(item, next, contentEl, activeTimeouts, lastWasValueRef
     // Get additional properties from "image" field in json
     if (item.width) img.style.width = item.width;
     if (item.marginLeft) img.style.marginLeft = item.marginLeft;
+    if (item.marginBottom) img.style.marginBottom = item.marginBottom;
 
     contentEl.appendChild(img);
     lastWasValueRef.current = false;

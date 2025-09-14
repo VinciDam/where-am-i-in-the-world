@@ -1,6 +1,6 @@
 export function createAnimatedImage(item) {
     const img = document.createElement("img");
-    img.src = item.animatedImage || item.scalingImage;
+    img.src = item.animatedImage || item.circularAnimatedImage || item.scalingImage;
     img.alt = item.alt || "";
     img.className = "animated-image";
     img.style.position = "absolute";
@@ -39,6 +39,51 @@ export function showAnimatedImage(item, next, activeTimeouts, lastWasValueRef) {
         activeTimeouts.push(setTimeout(next, delay));
     };
 }
+
+export function showCircularAnimatedImage(item, next, activeTimeouts, lastWasValueRef) {
+    const animationLayer = document.getElementById("animation-layer");
+  
+    const img = createAnimatedImage(item);
+    img.classList.add("circular-animated-image"); // optional styling
+    animationLayer.appendChild(img);
+  
+    const duration = item.duration || 4000;
+    const startTime = performance.now();
+  
+    // Parse radius and center
+    const radius = item.radius || 150;
+    const centerX = parseFloat(item.centerX || "50") / 100 * animationLayer.offsetWidth;
+    const centerY = parseFloat(item.centerY || "50") / 100 * animationLayer.offsetHeight;
+  
+    // Angles in degrees → radians
+    const startAngle = (item.startAngle || 0) * (Math.PI / 180);
+    const endAngle = (item.endAngle || 180) * (Math.PI / 180);
+    const clockwise = item.clockwise !== false; // default true
+  
+    function animate(time) {
+      const elapsed = time - startTime;
+      const t = Math.min(elapsed / duration, 1);
+  
+      // Interpolate angle
+      const angle = clockwise
+        ? startAngle + (endAngle - startAngle) * t
+        : startAngle - (startAngle - endAngle) * t;
+  
+      // Convert polar to cartesian
+      const x = centerX + radius * Math.cos(angle);
+      const y = centerY + radius * Math.sin(angle);
+  
+      img.style.transform = `translate(${x}px, ${y}px)`;
+  
+      if (t < 1) {
+        requestAnimationFrame(animate);
+      } else {
+        next();
+      }
+    }
+  
+    requestAnimationFrame(animate);
+  }  
 
 export function showScalingImage(item, next, activeTimeouts, lastWasValueRef) {
     const animationLayer = document.getElementById("animation-layer");

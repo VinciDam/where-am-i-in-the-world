@@ -162,6 +162,13 @@ body {
   pointer-events: none;
 }
 
+.circular-animated-image {
+  position: absolute;
+  display: block;
+  pointer-events: none;
+  transform-origin: center center;
+}
+
 #animation-layer {
   position: fixed;
   top: 0;
