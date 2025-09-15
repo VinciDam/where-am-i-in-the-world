@@ -57,7 +57,7 @@ export function showChapter(id) {
       if (chapter.marginTop) {
         contentEl.style.setProperty('--content-margin-top', chapter.marginTop);
       } else { 
-        contentEl.style.setProperty('--content-margin-top', '25vh'); // fallback
+        contentEl.style.setProperty('--content-margin-top', '15vh'); // fallback
       }
 
       // NOTE: replace else clause with commented text below for text-based margin estimate

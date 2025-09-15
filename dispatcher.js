@@ -1,5 +1,5 @@
 // dispatcher.js
-import { showText, showEmphasizedText, clearTextThenNext } from './renderers/text.js';
+import { showText, showEmphasizedText, clearTextThenNext, showBlock } from './renderers/text.js';
 import { showValue } from './renderers/value.js';
 import { showVideo } from './renderers/video.js';
 import { showImage } from './renderers/image.js';
@@ -19,6 +19,8 @@ export function dispatchContent(item, next, contentEl, activeTimeouts, lastWasVa
     clearTextThenNext(contentEl, next, activeTimeouts, delay);
   } else if (item.value) {
     showValue(item, next, contentEl, activeTimeouts, lastWasValueRef, onValueClick);
+  } else if (item.block) {
+    showBlock(item, next, contentEl, activeTimeouts, lastWasValueRef);
   } else if (item.video) {
     showVideo(item, next, contentEl, activeTimeouts, lastWasValueRef);
   } else if (item.backgroundImages) {
