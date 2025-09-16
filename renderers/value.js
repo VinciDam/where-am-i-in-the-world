@@ -3,6 +3,9 @@ import { showChapter } from '../script.js';
 import { playSoundFromUrl, playReversedSoundFromUrl, startBackgroundOnce } from '../audio/audioEngine.js';
 
 export function showValue(item, next, contentEl, activeTimeouts, lastWasValueRef) {
+  const span = document.createElement("span");
+  span.classList.add("preserve-whitespace");
+  
   const a = document.createElement("a");
   a.href = "#";
   a.textContent = item.value;
@@ -15,15 +18,17 @@ export function showValue(item, next, contentEl, activeTimeouts, lastWasValueRef
 
     // Play foreground audio if present
     if (item.audio) {
-      // playSoundFromUrl(item.audio);
-      playReversedSoundFromUrl(item.audio)
+      playSoundFromUrl(item.audio);
+      // playReversedSoundFromUrl(item.audio)
     }
 
     // Navigate immediately
     showChapter(item.link);
   };
 
-  contentEl.appendChild(a);
+  span.appendChild(a);
+  contentEl.appendChild(span);
+  
   lastWasValueRef.current = true;
   activeTimeouts.push(setTimeout(next, 100));
 }

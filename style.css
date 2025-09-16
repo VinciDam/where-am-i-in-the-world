@@ -29,6 +29,7 @@ body {
   
   a {
     color: blue;
+    display: inline;
     text-decoration: underline;
     cursor: pointer;
     position: relative;

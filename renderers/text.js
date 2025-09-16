@@ -1,5 +1,7 @@
 // renderers/text.js
 
+import { dispatchContent } from "../dispatcher.js";
+
 const WORD_REVEAL_DELAY = 40;
 
 export function showText(text, next, contentEl, activeTimeouts, lastWasValueRef) {
@@ -63,6 +65,7 @@ export function showBlock(item, next, contentEl, activeTimeouts, lastWasValueRef
   const div = document.createElement("div");
   div.classList.add("text-block", "preserve-whitespace");
 
+  // alignment only makes sense for block-level container
   if (align === "center") div.style.textAlign = "center";
   else if (align === "right") div.style.textAlign = "right";
   else if (align === "justify") {
@@ -70,9 +73,27 @@ export function showBlock(item, next, contentEl, activeTimeouts, lastWasValueRef
     div.style.textJustify = "inter-word";
   }
 
+  if (breakBefore) contentEl.appendChild(document.createElement("br"));
   contentEl.appendChild(div);
 
-  revealTextCharByChar(block, "", breakBefore, breakAfter, next, div, activeTimeouts, lastWasValueRef);
+  // ensure block is treated as an array
+  const children = Array.isArray(block) ? block : [block];
+
+  let i = 0;
+  function nextChild() {
+    if (i >= children.length) {
+      if (breakAfter) div.appendChild(document.createElement("br"));
+      activeTimeouts.push(setTimeout(next, 40));
+      return;
+    }
+
+    dispatchContent(children[i], () => {
+      i++;
+      nextChild();
+    }, div, activeTimeouts, lastWasValueRef);
+  }
+
+  nextChild();
 }
 
 function revealTextCharByChar(text, className, breakBefore, breakAfter, next, contentEl, activeTimeouts, lastWasValueRef) {
