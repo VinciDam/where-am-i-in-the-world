@@ -3,6 +3,7 @@ import { showText, showEmphasizedText, clearTextThenNext, showBlock } from './re
 import { showValue } from './renderers/value.js';
 import { showVideo } from './renderers/video.js';
 import { showImage } from './renderers/image.js';
+import { showPause } from './renderers/pause.js';
 import { showVideoGrid, showImageGrid } from './renderers/grid.js';
 import { showAlphabetRing } from './renderers/alphabetRing.js';
 import { showAnimatedImage, showReplicatedImages, 
@@ -21,6 +22,8 @@ export function dispatchContent(item, next, contentEl, activeTimeouts, lastWasVa
     showValue(item, next, contentEl, activeTimeouts, lastWasValueRef, onValueClick);
   } else if (item.block) {
     showBlock(item, next, contentEl, activeTimeouts, lastWasValueRef);
+  } else if (item.pause) {
+  showPause(item, next, activeTimeouts);
   } else if (item.video) {
     showVideo(item, next, contentEl, activeTimeouts, lastWasValueRef);
   } else if (item.backgroundImages) {
