@@ -6,6 +6,7 @@ import { showImage } from './renderers/image.js';
 import { showPause } from './renderers/pause.js';
 import { showVideoGrid, showImageGrid } from './renderers/grid.js';
 import { showAlphabetRing } from './renderers/alphabetRing.js';
+import { showWordSequence } from './renderers/alphabet.js';
 import { showAnimatedImage, showReplicatedImages, 
   showScalingImage, showAnimatedSquiggle, showCircularAnimatedImage } from './renderers/animatedImage.js';
 import { setBackgroundImages, clearBackgroundImages } from './renderers/background.js';
@@ -23,7 +24,7 @@ export function dispatchContent(item, next, contentEl, activeTimeouts, lastWasVa
   } else if (item.block) {
     showBlock(item, next, contentEl, activeTimeouts, lastWasValueRef);
   } else if (item.pause) {
-  showPause(item, next, activeTimeouts);
+    showPause(item, next, activeTimeouts);
   } else if (item.video) {
     showVideo(item, next, contentEl, activeTimeouts, lastWasValueRef);
   } else if (item.backgroundImages) {
@@ -38,6 +39,8 @@ export function dispatchContent(item, next, contentEl, activeTimeouts, lastWasVa
     showVideoGrid(item, next, contentEl, activeTimeouts, lastWasValueRef);
   } else if (item.imageGrid) {
     showImageGrid(item, next, contentEl, activeTimeouts, lastWasValueRef);
+  } else if (item.wordSequence) {
+    showWordSequence(item, next, contentEl, activeTimeouts, lastWasValueRef)
   } else if (item.alphabetRing) {
     showAlphabetRing(item.alphabetRing, next, contentEl, activeTimeouts, lastWasValueRef);
   } else if (item.animatedImage) {
