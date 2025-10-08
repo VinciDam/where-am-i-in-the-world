@@ -6,48 +6,36 @@ import { dispatchContent } from "../dispatcher.js";
 const WORD_REVEAL_DELAY = 70;
 const MAX_SPACE_DELAY = WORD_REVEAL_DELAY; // for whitespace clusters
 
-export function showText(text, next, contentEl, activeTimeouts, lastWasValueRef) {
-  // SPECIAL CASE: an *empty string* means an explicit blank line.
-  // We do NOT treat whitespace-only strings (e.g. "   ") here,
-  // because those should render as visible spaces via tokenized spans.
+export function showTextItem(item, next, contentEl, activeTimeouts, lastWasValueRef) {
+  // --- Normalize input ---
+  let text = "";
+  let className = "";
+  let breakBefore = false;
+  let breakAfter = false;
+
+  if (typeof item === "string") {
+    text = item;
+  } else if (item.em) {
+    text = item.em;
+    className = "em";
+    breakBefore = item.breakBefore ?? false;
+    breakAfter = item.breakAfter ?? false;
+  } else if (item.text) {
+    text = item.text;
+    className = item.className || "";
+    breakBefore = item.breakBefore ?? false;
+    breakAfter = item.breakAfter ?? false;
+  }
+
+  // --- Preserve blank-line behaviour ---
   if (text === "") {
-    // Insert a single line break
     contentEl.appendChild(document.createElement("br"));
-
-    // Maintain the convention that the last thing was not a 'value' (so normal breaks can occur next)
     lastWasValueRef.current = false;
-
-    // continue the sequence
     activeTimeouts.push(setTimeout(next, 20));
     return;
   }
 
-  // Normal strings: default to breakBefore + breakAfter (you set these defaults earlier)
-  showStyledText(
-    { text, className: "", breakBefore: false, breakAfter: false },
-    next,
-    contentEl,
-    activeTimeouts,
-    lastWasValueRef
-  );
-}
-
-export function showEmphasizedText(item, next, contentEl, activeTimeouts, lastWasValueRef) {
-  showStyledText(
-    { 
-      text: item.em, 
-      className: "em", 
-      breakBefore: item.breakBefore ?? false, 
-      breakAfter: item.breakAfter ?? false 
-    },
-    next,
-    contentEl,
-    activeTimeouts,
-    lastWasValueRef
-  );
-}
-
-export function showStyledText({ text, className = "", breakBefore = false, breakAfter = false }, next, contentEl, activeTimeouts, lastWasValueRef) {
+  // --- Normal case ---
   revealTextCharByChar(text, className, breakBefore, breakAfter, next, contentEl, activeTimeouts, lastWasValueRef);
 }
 

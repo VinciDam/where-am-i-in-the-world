@@ -1,5 +1,5 @@
 // dispatcher.js
-import { showText, showEmphasizedText, clearTextThenNext, showBlock } from './renderers/text.js';
+import { showTextItem, clearTextThenNext, showBlock } from './renderers/text.js';
 import { showValue } from './renderers/value.js';
 import { showVideo } from './renderers/video.js';
 import { showImage } from './renderers/image.js';
@@ -12,10 +12,8 @@ import { showAnimatedImage, showReplicatedImages,
 import { setBackgroundImages, clearBackgroundImages } from './renderers/background.js';
 
 export function dispatchContent(item, next, contentEl, activeTimeouts, lastWasValueRef, onValueClick) {
-  if (typeof item === "object" && item.em) {
-    showEmphasizedText(item, next, contentEl, activeTimeouts, lastWasValueRef);
-  } else if (typeof item === "string") {
-    showText(item, next, contentEl, activeTimeouts, lastWasValueRef);
+  if (typeof item === "string" || item.em || item.text) {
+    showTextItem(item, next, contentEl, activeTimeouts, lastWasValueRef);
   } else if (item.clearText) {
     const delay = typeof item.delay === "number" ? item.delay : 1000;
     clearTextThenNext(contentEl, next, activeTimeouts, delay);
