@@ -4,16 +4,16 @@ import { dispatchContent } from './dispatcher.js';
 import { ensureInitialized, stopChapterAudio } from './audio/audioEngine.js';
 import { startAmbientSnippets } from './audio/ambient.js';
 
-document.addEventListener('click', () => {
+/* document.addEventListener('click', () => {
   ensureInitialized();
   startAmbientSnippets();
-}, { once: true }); // Only needs to run once
+}, { once: true }); */ // Only needs to run once
 
 const contentEl = document.getElementById("content");
 const activeTimeouts = [];
 
 window.onload = () => {
-  showChapter("chapter-beginning");
+  showChapter("chapter-prelude");
 };
 
 function onValueClick(link) {
