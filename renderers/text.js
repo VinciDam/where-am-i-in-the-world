@@ -115,6 +115,15 @@ function revealTextCharByChar(text, className, breakBefore, breakAfter, next, co
       contentEl.appendChild(currentSpan);
     }
 
+    // If this token is *only whitespace*, reveal it all instantly
+    if (/^\s+$/.test(token)) {
+      currentSpan.textContent += token; // render all spaces at once
+      tokenIndex++;
+      charIndex = 0;
+      activeTimeouts.push(setTimeout(nextChar, WORD_REVEAL_DELAY)); // only one delay
+      return;
+    }
+
     // reveal the next character
     currentSpan.textContent += token[charIndex];
     charIndex++;
