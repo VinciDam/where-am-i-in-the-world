@@ -6,6 +6,7 @@ import { playBuffer, playLoopingBuffer, stopLoopingBuffer, setLoopGain, setLoopP
 import { reverseBuffer } from "./utils/bufferUtils.js";
 import { startAmbientSnippets, stopAmbientSnippets } from './ambient.js';
 
+let backgroundBuffer = null;
 let initialized = false;
 let backgroundSource = null;
 let currentChapterSource = null;
@@ -61,7 +62,7 @@ export async function playReversedSoundFromUrl(url) {
 
 export async function startBackgroundLoop(url) {
     await ensureInitialized();
-    const buffer = await fetchAndDecode(url);
+    const buffer = backgroundBuffer || await fetchAndDecode(url);
     backgroundSource = playLoopingBuffer(buffer);
 }
 
@@ -100,5 +101,20 @@ export function stopChapterAudio() {
         currentChapterSource = null;
     }
   }
+
+// Preload background audio at startup
+(async () => {
+  try {
+    const ctx = getAudioContext();
+    // Don't resume yet (avoids autoplay restrictions)
+    const response = await fetch("audio/background.mp3");
+    const arrayBuffer = await response.arrayBuffer();
+    backgroundBuffer = await ctx.decodeAudioData(arrayBuffer);
+    console.log("Background audio preloaded.");
+  } catch (e) {
+    console.warn("Failed to preload background:", e);
+  }
+})();
+
 
 
