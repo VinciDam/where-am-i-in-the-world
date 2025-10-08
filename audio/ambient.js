@@ -26,6 +26,10 @@ export function stopAmbientSnippets() {
     try {
       ambientSource.stop();
       ambientSource.disconnect();
+      // also disconnect the gain node if we attached one
+      if (ambientSource.gainNode) {
+        try { ambientSource.gainNode.disconnect(); } catch (_) {}
+      }
     } catch (_) {}
     ambientSource = null;
   }
@@ -39,14 +43,25 @@ async function playNextAmbientSnippet() {
 
   const source = ctx.createBufferSource();
   source.buffer = buffer;
-  source.connect(ctx.destination);
+
+  // Minimal change: insert a GainNode set to 50% volume.
+  const gainNode = ctx.createGain(); // <-- added
+  gainNode.gain.setValueAtTime(0.2, ctx.currentTime); // <-- added
+
+  // connect source -> gain -> destination
+  source.connect(gainNode); // <-- changed
+  gainNode.connect(ctx.destination); // <-- changed
+
+  // keep a reference so stopAmbientSnippets can disconnect it
+  source.gainNode = gainNode; // <-- added
+
   source.start();
 
   ambientSource = source;
 
   source.onended = () => {
     ambientIndex = (ambientIndex + 1) % snippetUrls.length;
-    const delay = 2000 + Math.random() * 3000;
+    const delay = 5000 + Math.random() * 10000;
     ambientTimeout = setTimeout(playNextAmbientSnippet, delay);
   };
 }
