@@ -2,7 +2,7 @@
 
 import { dispatchContent } from "../dispatcher.js";
 
-const WORD_REVEAL_DELAY = 40;
+const WORD_REVEAL_DELAY = 70;
 
 export function showText(text, next, contentEl, activeTimeouts, lastWasValueRef) {
   // SPECIAL CASE: an *empty string* means an explicit blank line.
