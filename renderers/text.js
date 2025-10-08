@@ -141,31 +141,6 @@ function revealTextCharByChar(text, className, breakBefore, breakAfter, next, co
   nextChar();
 }
 
-function revealWordsOneByOne(text, className, addInitialBreak, next, contentEl, activeTimeouts, lastWasValueRef) {
-  if (addInitialBreak && !lastWasValueRef.current) {
-    contentEl.appendChild(document.createElement("br"));
-  }
-
-  const tokens = (text || "").match(/(\s+|\S+)/g) || [];
-  let tokenIndex = 0;
-
-  function nextToken() {
-    if (tokenIndex >= tokens.length) {
-      lastWasValueRef.current = false;
-      activeTimeouts.push(setTimeout(next, WORD_REVEAL_DELAY));
-      return;
-    }
-
-    const span = createTextSpan(tokens[tokenIndex], className);
-    contentEl.appendChild(span);
-
-    tokenIndex++;
-    activeTimeouts.push(setTimeout(nextToken, WORD_REVEAL_DELAY));
-  }
-
-  nextToken();
-}
-
 function createTextSpan(token, className) {
   const span = document.createElement("span");
   span.textContent = token;
