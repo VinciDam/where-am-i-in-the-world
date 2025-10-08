@@ -12,6 +12,7 @@ export function showTextItem(item, next, contentEl, activeTimeouts, lastWasValue
   let className = "";
   let breakBefore = false;
   let breakAfter = false;
+  let indent = 0; // optional indentation (in num spaces)
 
   if (typeof item === "string") {
     text = item;
@@ -20,11 +21,13 @@ export function showTextItem(item, next, contentEl, activeTimeouts, lastWasValue
     className = "em";
     breakBefore = item.breakBefore ?? false;
     breakAfter = item.breakAfter ?? false;
+    indent = item.indent ?? 0;
   } else if (item.text) {
     text = item.text;
     className = item.className || "";
     breakBefore = item.breakBefore ?? false;
     breakAfter = item.breakAfter ?? false;
+    indent = item.indent ?? 0;
   }
 
   // --- Preserve blank-line behaviour ---
@@ -36,7 +39,17 @@ export function showTextItem(item, next, contentEl, activeTimeouts, lastWasValue
   }
 
   // --- Normal case ---
-  revealTextCharByChar(text, className, breakBefore, breakAfter, next, contentEl, activeTimeouts, lastWasValueRef);
+  revealTextCharByChar(
+    text, 
+    className, 
+    breakBefore, 
+    breakAfter, 
+    next, 
+    contentEl, 
+    activeTimeouts, 
+    lastWasValueRef,
+    indent
+  );
 }
 
 export function clearTextThenNext(contentEl, next, activeTimeouts, delay = 1000) {
@@ -86,9 +99,27 @@ export function showBlock(item, next, contentEl, activeTimeouts, lastWasValueRef
   nextChild();
 }
 
-function revealTextCharByChar(text, className, breakBefore, breakAfter, next, contentEl, activeTimeouts, lastWasValueRef) {
+function revealTextCharByChar(
+  text, 
+  className, 
+  breakBefore, 
+  breakAfter, 
+  next, 
+  contentEl, 
+  activeTimeouts, 
+  lastWasValueRef,
+  indent = 0
+) {
   if (breakBefore && !lastWasValueRef.current) {
     contentEl.appendChild(document.createElement("br"));
+  }
+
+  // Add indentation instantly before reveal
+  if (indent > 0) {
+    const indentSpan = document.createElement("span");
+    indentSpan.classList.add("preserve-whitespace");
+    indentSpan.textContent = " ".repeat(indent);
+    contentEl.appendChild(indentSpan);
   }
 
   const tokens = (text || "").match(/(\s+|\S+)/g) || [];
