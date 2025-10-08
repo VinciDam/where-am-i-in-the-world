@@ -2,7 +2,9 @@
 
 import { dispatchContent } from "../dispatcher.js";
 
+// Timing configuration
 const WORD_REVEAL_DELAY = 70;
+const MAX_SPACE_DELAY = WORD_REVEAL_DELAY; // for whitespace clusters
 
 export function showText(text, next, contentEl, activeTimeouts, lastWasValueRef) {
   // SPECIAL CASE: an *empty string* means an explicit blank line.
