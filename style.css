@@ -18,6 +18,28 @@ body {
     margin-left: 10px;
     font-size: 1.2em;
   }
+
+.word-sequence-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.word-sequence-word {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25em;
+}
+
+.word-english {
+  font-size: 1.2rem;
+  font-family: var(--main-font, sans-serif);
+}
+
+.word-jelly {
+  font-family: 'JellyScript', cursive; /* your custom jellyfish font */
+  font-size: 1.2rem;
+}
   
   #content {
     max-width: 40rem; /* ~720px, better for readability */
@@ -114,6 +136,7 @@ body {
     margin: 0.5em 0;
     width: 100%;
   }
+
 
 /* Alphabet ring container */
 .alphabet-ring-wrapper {
