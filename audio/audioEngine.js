@@ -20,7 +20,7 @@ export async function ensureInitialized() {
 }
 
 // Add this helper (internal use only)
-async function playChapterBuffer(buffer) {
+async function playChapterBuffer(buffer, volume = 1.0) {
     await ensureInitialized();
   
     // Stop previous chapter audio if still playing
@@ -37,7 +37,14 @@ async function playChapterBuffer(buffer) {
     const ctx = getAudioContext();
     const source = ctx.createBufferSource();
     source.buffer = buffer;
-    source.connect(ctx.destination);
+
+    // Add gain node
+    const gainNode = ctx.createGain();
+    gainNode.gain.setValueAtTime(volume, ctx.currentTime);
+
+    source.connect(gainNode);
+    gainNode.connect(ctx.destination);
+
     source.start();
   
     currentChapterSource = source;
@@ -49,9 +56,9 @@ async function playChapterBuffer(buffer) {
     };
   }
   
-export async function playSoundFromUrl(url) {
+export async function playSoundFromUrl(url, volume = 1.0) {
     const buffer = await fetchAndDecode(url);
-    await playChapterBuffer(buffer);
+    await playChapterBuffer(buffer, volume);
 }
 
 export async function playReversedSoundFromUrl(url) {

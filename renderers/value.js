@@ -18,7 +18,8 @@ export function showValue(item, next, contentEl, activeTimeouts, lastWasValueRef
 
     // Play foreground audio if present
     if (item.audio) {
-      playSoundFromUrl(item.audio);
+      const volume = item.volume !== undefined ? Number(item.volume) : 1.0;
+      playSoundFromUrl(item.audio, volume);
       // playReversedSoundFromUrl(item.audio)
     }
 

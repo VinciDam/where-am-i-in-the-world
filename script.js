@@ -13,7 +13,7 @@ const contentEl = document.getElementById("content");
 const activeTimeouts = [];
 
 window.onload = () => {
-  showChapter("chapter-prelude");
+  showChapter("chapter-intro");
 };
 
 function onValueClick(link) {
