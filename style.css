@@ -8,16 +8,16 @@ body {
     padding: 2rem;
   }
 
-  @font-face {
-    font-family: 'jellyScript';
-    src: url('fonts/jellyScript.otf') format('opentype');
-  }
+@font-face {
+  font-family: 'jellyScript';
+  src: url('fonts/jellyScript.otf') format('opentype');
+}
   
-  .jelly-script {
-    font-family: 'jellyScript', sans-serif;
-    margin-left: 10px;
-    font-size: 1.2em;
-  }
+.jelly-script {
+  font-family: 'jellyScript', sans-serif;
+  margin-left: 10px;
+  font-size: 1.2em;
+}
 
 .word-sequence-wrapper {
   width: 100%;
