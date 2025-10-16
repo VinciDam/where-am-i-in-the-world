@@ -1,9 +1,10 @@
 // script.js
 
 import { dispatchContent } from './dispatcher.js';
-import { ensureInitialized, stopChapterAudio } from './audio/audioEngine.js';
+import { ensureInitialized, stopChapterAudio, 
+  stopBackgroundLoop, resetBackgroundTrigger } from './audio/audioEngine.js';
 import { startAmbientSnippets } from './audio/ambient.js';
-import { resetLinkClicks } from './renderers/value.js';
+import { resetLinkClicks } from './state.js';
 
 /* document.addEventListener('click', () => {
   ensureInitialized();
@@ -12,20 +13,23 @@ import { resetLinkClicks } from './renderers/value.js';
 
 const contentEl = document.getElementById("content");
 const activeTimeouts = [];
-const AUTO_RESTART_DELAY = 100 * 1000;   // optional delay after narrative ends (ms)
+const AUTO_RESTART_DELAY = 5000;   // optional delay after narrative ends (ms)
+const FIRST_CHAPTER = "chapter-start";
 const LAST_CHAPTER = "chapter-we-wave";
 
 // --- Called at the end of the last chapter ---
-function onNarrativeEnd() {
+export function restartNarrative() {
   // auto-restart after a short delay
   setTimeout(() => {
-    showChapter("chapter-start");
+    stopBackgroundLoop();
+    resetBackgroundTrigger();
+    showChapter(FIRST_CHAPTER);
     resetLinkClicks();
   }, AUTO_RESTART_DELAY);
 }
 
 window.onload = () => {
-  showChapter("chapter-light-2");
+  showChapter("chapter-start");
 };
 
 function onValueClick(link) {
@@ -89,9 +93,9 @@ export function showChapter(id) {
       handleAutoAdvance(chapter.autoAdvance);
 
       // --- Auto-restart at the last chapter ---
-      if (id === LAST_CHAPTER) {
+      /* if (id === LAST_CHAPTER) {
         onNarrativeEnd(); // call your helper that shows a prompt or automatically restarts
-      }
+      } */
 
     })
     .catch(error => console.error(`Failed to load ${id}:`, error));

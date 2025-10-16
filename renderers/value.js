@@ -1,13 +1,9 @@
 import { showChapter } from '../script.js';
 // import { toggleNav } from '../script.js';
-import { playSoundFromUrl, playReversedSoundFromUrl, startBackgroundOnce } from '../audio/audioEngine.js';
+import { playSoundFromUrl, startBackgroundOnce } from '../audio/audioEngine.js';
+import { incrementLinkClicks, getLinkClicks } from '../state.js';
 
 const BACKGROUND_START_AFTER = 2; // start background on this click number
-let linkClicks = 0; // module-level counter, reset elsewhere if narrative restarts
-
-export function resetLinkClicks() {
-    linkClicks = 0;
-}
 
 export function showValue(item, next, contentEl, activeTimeouts, lastWasValueRef) {
   const span = document.createElement("span");
@@ -20,7 +16,8 @@ export function showValue(item, next, contentEl, activeTimeouts, lastWasValueRef
   a.onclick = async (e) => {
     e.preventDefault();
 
-    linkClicks++;
+    incrementLinkClicks();
+    const linkClicks = getLinkClicks();
 
     // Start background loop on second user click
     if (linkClicks >= BACKGROUND_START_AFTER) {

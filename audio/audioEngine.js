@@ -101,6 +101,10 @@ export async function startBackgroundOnce(url) {
     }
 }
 
+export function resetBackgroundTrigger() {
+  backgroundStarted = false;
+}
+
 export function stopChapterAudio() {
     if (currentChapterSource) {
         currentChapterSource.stop();
