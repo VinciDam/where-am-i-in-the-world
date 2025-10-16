@@ -5,6 +5,7 @@ import { ensureInitialized, stopChapterAudio,
   stopBackgroundLoop, resetBackgroundTrigger } from './audio/audioEngine.js';
 import { startAmbientSnippets } from './audio/ambient.js';
 import { resetLinkClicks } from './state.js';
+import { startIdleMonitor } from "./idleTimeout.js";
 
 /* document.addEventListener('click', () => {
   ensureInitialized();
@@ -13,7 +14,7 @@ import { resetLinkClicks } from './state.js';
 
 const contentEl = document.getElementById("content");
 const activeTimeouts = [];
-const AUTO_RESTART_DELAY = 5000;   // optional delay after narrative ends (ms)
+const AUTO_RESTART_DELAY = 1000;   // optional delay after narrative ends (ms)
 const FIRST_CHAPTER = "chapter-start";
 const LAST_CHAPTER = "chapter-we-wave";
 
@@ -30,6 +31,7 @@ export function restartNarrative() {
 
 window.onload = () => {
   showChapter("chapter-start");
+  startIdleMonitor(); // begin monitoring
 };
 
 function onValueClick(link) {
