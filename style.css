@@ -239,3 +239,17 @@ body {
   will-change: transform;
 }
 
+#restartButton {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  font-family: 'Inconsolata', monospace;
+  font-size: 1rem;
+  padding: 0.5rem 0.8rem;
+  background: rgba(255,255,255,0.9);
+  border: 1px solid #000;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  z-index: 1000;
+  display: none; /* hidden by default */
+}

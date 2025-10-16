@@ -16,7 +16,15 @@ const contentEl = document.getElementById("content");
 const activeTimeouts = [];
 const AUTO_RESTART_DELAY = 1000;   // optional delay after narrative ends (ms)
 const FIRST_CHAPTER = "chapter-start";
-const LAST_CHAPTER = "chapter-we-wave";
+const restartButton = document.getElementById("restartButton");
+
+restartButton.addEventListener("click", () => {
+  stopBackgroundLoop();      // stop ongoing audio
+  resetBackgroundTrigger();
+  showChapter(FIRST_CHAPTER); // restart narrative
+  resetLinkClicks();         // reset click counters
+  restartButton.style.display = "none";
+});
 
 // --- Called at the end of the last chapter ---
 export function restartNarrative() {
@@ -30,7 +38,7 @@ export function restartNarrative() {
 }
 
 window.onload = () => {
-  showChapter("chapter-start");
+  showChapter(FIRST_CHAPTER);
   startIdleMonitor(); // begin monitoring
 };
 

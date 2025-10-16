@@ -1,16 +1,28 @@
 // --- idleTimeout.js ---
 
-const IDLE_DELAY = 2 * 60 * 1000; // 2 minutes
+const IDLE_DELAY = 1 * 60 * 1000; // 2 minutes
 let idleTimer = null;
 
 export function startIdleMonitor() {
-  resetIdleTimer();
-  window.addEventListener("click", resetIdleTimer);
+    resetIdleTimer();
+    window.addEventListener("click", resetIdleTimer);
 }
 
 function resetIdleTimer() {
-  if (idleTimer) clearTimeout(idleTimer);
-  idleTimer = setTimeout(showIdleModal, IDLE_DELAY);
+    hideRestartButton();
+    if (idleTimer) clearTimeout(idleTimer);
+    // idleTimer = setTimeout(showIdleModal, IDLE_DELAY);
+    idleTimer = setTimeout(showRestartButton, IDLE_DELAY);
+}
+
+function showRestartButton() {
+  const btn = document.getElementById("restartButton");
+  if (btn) btn.style.display = "block";
+}
+
+function hideRestartButton() {
+  const btn = document.getElementById("restartButton");
+  if (btn) btn.style.display = "none";
 }
 
 function showIdleModal() {
@@ -31,7 +43,7 @@ function showIdleModal() {
   
   // Message
   const msg = document.createElement("div");
-  msg.textContent = "You've been idle for several minutes. Do you want to restart?";
+  msg.textContent = "you've been idle for several minutes... do you want to restart?";
   msg.style.color = "#fff";
   msg.style.fontSize = "1.5rem";
   msg.style.marginBottom = "1rem";
@@ -41,14 +53,14 @@ function showIdleModal() {
   const btnContainer = document.createElement("div");
   
   const restartBtn = document.createElement("button");
-  restartBtn.textContent = "Restart";
+  restartBtn.textContent = "restart";
   restartBtn.onclick = () => {
     removeOverlay();
     restartNarrative();
   };
   
   const continueBtn = document.createElement("button");
-  continueBtn.textContent = "Continue";
+  continueBtn.textContent = "continue";
   continueBtn.style.marginLeft = "1rem";
   continueBtn.onclick = () => {
     removeOverlay();
