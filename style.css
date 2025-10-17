@@ -1,16 +1,22 @@
-body {
-    font-family: 'Inconsolata', monospace;
-    font-size: 1rem;
-    background: #fff;
-    color: #000;
-    line-height: 1.8;
-    margin: 0;
-    padding: 2rem;
-  }
-
 @font-face {
   font-family: 'jellyScript';
   src: url('fonts/jellyScript.otf') format('opentype');
+}
+
+html {
+  font-size: clamp(14px, 1.8vh, 26px);
+}
+
+body {
+  font-family: 'Inconsolata', monospace;
+  font-size: 1rem;
+  background: #fff;
+  color: #000;
+  line-height: 1.8;
+  margin: 0;
+  padding: 2rem;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .word-sequence-wrapper {
