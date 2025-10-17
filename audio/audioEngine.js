@@ -2,9 +2,8 @@
 
 import { getAudioContext } from "./core/context.js";
 import { fetchAndDecode } from "./core/loader.js";
-import { playBuffer, playLoopingBuffer, stopLoopingBuffer, setLoopGain, setLoopPanner } from "./core/player.js";
+import { playLoopingBuffer, stopLoopingBuffer, setLoopGain, setLoopPanner } from "./core/player.js";
 import { reverseBuffer } from "./utils/bufferUtils.js";
-import { startAmbientSnippets, stopAmbientSnippets } from './ambient.js';
 
 let backgroundBuffer = null;
 let initialized = false;

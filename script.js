@@ -1,16 +1,10 @@
 // script.js
 
 import { dispatchContent } from './dispatcher.js';
-import { ensureInitialized, stopChapterAudio, 
+import { stopChapterAudio, 
   stopBackgroundLoop, resetBackgroundTrigger } from './audio/audioEngine.js';
-import { startAmbientSnippets } from './audio/ambient.js';
 import { resetLinkClicks } from './state.js';
 import { startIdleMonitor } from "./idleTimeout.js";
-
-/* document.addEventListener('click', () => {
-  ensureInitialized();
-  startAmbientSnippets();
-}, { once: true }); */ // Only needs to run once
 
 const contentEl = document.getElementById("content");
 const activeTimeouts = [];
@@ -26,7 +20,6 @@ restartButton.addEventListener("click", () => {
   restartButton.style.display = "none";
 });
 
-// --- Called at the end of the last chapter ---
 export function restartNarrative() {
   // auto-restart after a short delay
   setTimeout(() => {
@@ -51,21 +44,6 @@ function clearTimeouts() {
   activeTimeouts.length = 0;
 }
 
-function estimateTopMargin(contentArray) {
-  let wordCount = contentArray.reduce((acc, item) => {
-    if (typeof item === 'string') {
-      return acc + item.split(/\s+/).length;
-    } else if (typeof item === 'object' && typeof item.value === 'string') {
-      return acc + item.value.split(/\s+/).length;
-    }
-    return acc;
-  }, 0);
-
-  // E.g., longer text = smaller margin, capped between 5vh and 30vh
-  const estimated = Math.max(5, 30 - wordCount / 3);
-  return `${estimated}vh`;
-}
-
 export function showChapter(id) {
   stopChapterAudio();
   clearTimeouts();
@@ -86,12 +64,6 @@ export function showChapter(id) {
         contentEl.style.setProperty('--content-margin-top', '15vh'); // fallback
       }
 
-      // NOTE: replace else clause with commented text below for text-based margin estimate
-      // } else {
-      //   const estimatedTop = estimateTopMargin(chapter.content);
-      //   contentEl.style.setProperty('--content-margin-top', estimatedTop);
-      // }
-
       if (chapter.marginBottom) {
         contentEl.style.setProperty('--content-margin-bottom', chapter.marginBottom);
       } else {
@@ -101,11 +73,6 @@ export function showChapter(id) {
       const lastWasValueRef = { value: false };
       revealContent(chapter.content, lastWasValueRef);
       handleAutoAdvance(chapter.autoAdvance);
-
-      // --- Auto-restart at the last chapter ---
-      /* if (id === LAST_CHAPTER) {
-        onNarrativeEnd(); // call your helper that shows a prompt or automatically restarts
-      } */
 
     })
     .catch(error => console.error(`Failed to load ${id}:`, error));

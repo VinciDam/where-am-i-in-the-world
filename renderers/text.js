@@ -4,7 +4,6 @@ import { dispatchContent } from "../dispatcher.js";
 
 // Timing configuration
 const WORD_REVEAL_DELAY = 70;
-const MAX_SPACE_DELAY = WORD_REVEAL_DELAY; // for whitespace clusters
 
 export function showTextItem(item, next, contentEl, activeTimeouts, lastWasValueRef) {
   // --- Normalize input ---
@@ -169,12 +168,4 @@ function revealTextCharByChar(
   }
 
   nextChar();
-}
-
-function createTextSpan(token, className) {
-  const span = document.createElement("span");
-  span.textContent = token;
-  if (className) span.className = className;
-  span.classList.add("preserve-whitespace");
-  return span;
 }

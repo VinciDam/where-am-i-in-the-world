@@ -1,5 +1,4 @@
 import { showChapter } from '../script.js';
-// import { toggleNav } from '../script.js';
 import { playSoundFromUrl, startBackgroundOnce } from '../audio/audioEngine.js';
 import { incrementLinkClicks, getLinkClicks } from '../state.js';
 
@@ -28,7 +27,6 @@ export function showValue(item, next, contentEl, activeTimeouts, lastWasValueRef
     if (item.audio) {
       const volume = item.volume !== undefined ? Number(item.volume) : 1.0;
       playSoundFromUrl(item.audio, volume);
-      // playReversedSoundFromUrl(item.audio)
     }
 
     // Navigate immediately

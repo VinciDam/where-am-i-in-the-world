@@ -11,7 +11,6 @@ export function startIdleMonitor() {
 function resetIdleTimer() {
     hideRestartButton();
     if (idleTimer) clearTimeout(idleTimer);
-    // idleTimer = setTimeout(showIdleModal, IDLE_DELAY);
     idleTimer = setTimeout(showRestartButton, IDLE_DELAY);
 }
 
@@ -79,5 +78,4 @@ function removeOverlay() {
   if (overlay) overlay.remove();
 }
 
-// Must import restartNarrative() from script.js
 import { restartNarrative } from "./script.js";
