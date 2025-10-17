@@ -5,7 +5,6 @@ import { showVideo } from './renderers/video.js';
 import { showImage } from './renderers/image.js';
 import { showPause } from './renderers/pause.js';
 import { showVideoGrid, showImageGrid } from './renderers/grid.js';
-import { showAlphabetRing } from './renderers/alphabetRing.js';
 import { showWordSequence } from './renderers/alphabet.js';
 import { showAnimatedImage, showReplicatedImages, 
   showScalingImage, showAnimatedSquiggle, showCircularAnimatedImage } from './renderers/animatedImage.js';
@@ -40,8 +39,6 @@ export function dispatchContent(item, next, contentEl, activeTimeouts, lastWasVa
     showImageGrid(item, next, contentEl, activeTimeouts, lastWasValueRef);
   } else if (item.wordSequence) {
     showWordSequence(item, next, contentEl, activeTimeouts, lastWasValueRef)
-  } else if (item.alphabetRing) {
-    showAlphabetRing(item.alphabetRing, next, contentEl, activeTimeouts, lastWasValueRef);
   } else if (item.animatedImage) {
     showAnimatedImage(item, next, activeTimeouts, lastWasValueRef);
   } else if (item.circularAnimatedImage) {
