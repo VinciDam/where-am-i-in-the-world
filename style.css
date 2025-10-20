@@ -10,7 +10,7 @@ html {
 body {
   font-family: 'Inconsolata', monospace;
   font-size: 1rem;
-  background: #fff;
+  background: #e6e6e6;
   color: #000;
   line-height: 1.8;
   margin: 0;
@@ -106,7 +106,7 @@ video.autoplay-video {
   overflow: visible;
   pointer-events: none;
   font-size: 1rem;
-  color: #fff;
+  color: #e6e6e6;
   text-shadow: 1px 1px 3px #000;
   animation-name: scrollLeft;
   animation-timing-function: linear;
@@ -127,7 +127,7 @@ video.autoplay-video {
 .em {
   font-style: italic;
   color: #000;
-  background-color: #fff;
+  background-color: #e6e6e6;
 }
 
 .text-block {
@@ -210,7 +210,7 @@ video.autoplay-video {
   font-family: 'Inconsolata', monospace;
   font-size: 1rem;
   padding: 0.5rem 0.8rem;
-  background: rgba(255,255,255,0.9);
+  background: rgba(230,230,230,0.9);
   border: 1px solid #000;
   border-radius: 0.3rem;
   cursor: pointer;

@@ -1,6 +1,6 @@
 // --- idleTimeout.js ---
 
-const IDLE_DELAY = 1 * 60 * 1000; // 2 minutes
+const IDLE_DELAY = 80 * 1000; // 80 seconds
 let idleTimer = null;
 
 export function startIdleMonitor() {
