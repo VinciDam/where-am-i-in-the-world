@@ -1,0 +1,17 @@
+{
+    "content": [
+        { "block": [ 
+            "last night, some fish swam in schools, swam so close, became one ",
+            { "value": "body", "link": "chapter-body" },
+            ". we saw them, down there, one by one. we saw them, down there, one and one, and all were one: one fin,"
+            ], "align": "justify" },
+        { "text": "one belly, ", "indent": 56 },
+        "",
+        { "text": "one head, ", "indent": 56 },
+        "",
+        { "text": "one tail, ", "indent": 56 },
+        "",
+        "",
+        { "block": "but where am i in this world?", "align": "center" }
+    ]
+}

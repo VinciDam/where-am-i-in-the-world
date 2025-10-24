@@ -1,0 +1,16 @@
+{
+    "content": [
+      "Part 1,", "",
+      "        from now on,", "",
+      {"em": "                     the longest living among "}, "us", "",
+      {"em": "                     has the opportunity"}, "",
+      {"em": "                     to sit in unchanged property."},
+      {"clearText": true, "delay": 1050},
+      "Part 2,", "",
+      "        from now on,", "",
+      {"em": "                     the longest living among "},
+      {"value": "us", "link": "chapter-us"}, "",
+      {"em": "                     lives in an unchanged"}, "",
+      {"em": "                     home."}
+    ]
+}

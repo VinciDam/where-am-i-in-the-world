@@ -1,0 +1,33 @@
+{
+    "content": [
+        "towards ", {"em": "There"}, ", we meet a pony. ", {"pause": 700}, "",
+        "",
+        "he calls from afar.", {"pause": 700}, "",
+        "",
+        "we touch his forehead and he pushes back, meeting our hands.",
+        { "clearText": true, "delay": 2000 },
+        "to make a pony from a hand,",
+        "",
+        "                           place",
+        "",
+        "                           one finger for head",
+        "",
+        "                           all others for legs:",
+        {"pause": 800},
+        { "block": 
+            [
+                "three on one side",
+                "",
+                "one on other",
+                "",
+                "each pony",
+                "",
+                "slightly ", 
+                "",
+                { "value": "leaning", 
+                "link": "chapter-leaning",
+                "audio": "audio/falken-fade.mp3",
+                "volume": 0.5 }, "."
+        ], "align": "right"}
+            ]
+  }

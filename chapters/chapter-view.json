@@ -1,0 +1,25 @@
+{
+  "autoAdvance": {
+      "type": "mediaEnd",
+      "target": "videos/reeds_short.mp4",
+      "next": "chapter-view-text"
+    },
+    "content": [
+      {
+        "video": "videos/reeds_short.mp4",
+        "width": "60%"
+      },
+      {
+        "replicateImage": "images/aero_gun_empty.png",
+        "coordinates": [
+          { "x": "25%", "y": "40%" },
+          { "x": "40%", "y": "40%" },
+          { "x": "60%", "y": "40%" },
+          { "x": "75%", "y": "40%" }
+        ],
+        "width": "45%",
+        "interval": 500, 
+        "replaceAfter": 3000
+      }
+    ]
+  }

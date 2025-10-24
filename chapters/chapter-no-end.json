@@ -1,0 +1,33 @@
+{
+    "content": [
+        {"block": ["cold on a dock, we film water, mostly water. ",
+        {"pause": 500}, "and while water ",
+        "ebbs and flows, mostly turns and twists, flaps and drifts, pans ",
+        "and seals and sometimes stays:"], "align": "justify"},
+        "", "", {"pause": 850},
+        "                  born from folds", "",
+        "                  of its body,", "",
+        "                                a tongue", "",
+        "", {"pause": 600},
+        "                                (transparent to", "",
+        "                                       think of)",
+        {"clearText": true, "delay": 700},
+        { "video": "videos/jelly-nopause-fixed.mp4", "width": "50%" },
+        { "pause": 6500 },
+        {"block": [
+            "now", "",
+            {"pause": 600},
+            "take these,", "",
+            {"pause": 600},
+            "take these letters,", "",
+            {"pause": 600},
+            "take these twenty-six letters,", "",
+            {"pause": 600},
+            "take these letters and mould them to words,", "",
+            {"pause": 600},
+            "mould them to words, ",
+            {"value": "whichever way", "link": "chapter-walking", "audio": "audio/footsteps.mp3", "volume": 0.5},
+            " they please.", {"pause": 600}
+        ], "align": "center"}
+    ]
+}

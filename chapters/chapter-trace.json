@@ -1,0 +1,27 @@
+{
+    "content": [
+        { "block": [
+            "we are still.",
+            "",
+            "the world surrounds us."
+        ], "align": "center"},
+        { "pause": 800 },
+        "",
+        "",
+        "",
+        { "block": [
+            "here, trees draw seahorses and seas draw lines. ",
+            "a reed, a common one, makes a herd of cattle moving west. ",
+            {"pause": 625}, "here, a field signs itself: signs and signs and signs again. ",
+            {"pause": 625}, "here, dry mugworts draw nostrils and a smell taking over. ",
+            {"pause": 625}, "here, a heron lines a flight, its flight, and ducks line a flight, their flight, and two swans draw themselves."
+        ], "align": "justify"},
+        { "clearText": true, "delay": 2000 },
+        { "block": ["in our dance, we start with dots, move to lines and fill", "", "everything"], "align": "center" },
+        { "clearText": true, "delay": 1800 },
+        { "block": [
+            "on my right, your ", {"value": "hand", "link": "chapter-hand"}, " draws a flower:",
+            "", "", "a carnation", "", "a wedding flower", "", "the colour of flesh."], 
+            "align": "center" }
+    ]
+}

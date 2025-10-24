@@ -1,0 +1,23 @@
+{
+    "content": [
+          { "block": [ "an average working mechanical clock loses 15 to 30 seconds a day. ", 
+          { "pause": 800 },
+          "pausing at 12, our clock misses as much as a heartbeat, as little as a face-focus of a camera. ",
+          {"pause": 650}, "twice."], 
+          "align": "justify" },
+          { "pause": 1800 },
+          { "video": "videos/crop_clock.mp4", "width": "20%" },
+          { "pause": 2300 },
+          { "block": [ "somewhere between 5:40, 5:41, the camera sees two faces in a round-red-seconds-hand waiting for a minute shift. ",
+          {"pause": 600}, "the face is gone, and a shift comes shivering––second to minute to hour––as if time caught a ",
+          {
+            "value": "cold",
+            "link": "chapter-cold",
+            "audio": "audio/cough-multi.mp3",
+            "volume": 1.1
+          },
+          "."
+        ],
+        "align": "justify" }
+        ]
+  }

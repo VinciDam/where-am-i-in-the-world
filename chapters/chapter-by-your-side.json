@@ -1,0 +1,31 @@
+{
+    "content": [
+        "our marriage is witnessed by two. of them, we know that",
+        "", "",
+        { "pause": 625 },
+        "      1) the rain might stop and the weather is harsh.",
+        "", { "pause": 600 },
+        "      2) a bus goes through the island, circles and circles",
+        "", 
+        "         and comes back.", { "pause": 600 },
+        "",
+        "      3) rain falls hard and rain falls often, but",
+        "",
+        {"em": "             if you want to see the island when it rains,"},
+        "",
+        {"em": "             you can see it from the bus."},
+        "", { "pause": 600 },
+        "      4) many muscat wines do get you drunk and water",
+        "",
+        "             looks rather similar. ", { "pause": 600 },
+        { "value": "tanti auguri", "link": "chapter-tanti-auguri",
+        "audio": "audio/ceremony-collage-whistle.mp3", "volume": 1.5 },
+        ".",
+        "", { "pause": 600 },
+        "      5) ", {"em": "today, the rain is slanted."},
+        "", { "pause": 600 },
+        "      6) today is midday.",
+        "", { "pause": 600 },
+        "      7) in a way, nothing really ever goes wrong."
+    ]
+  }

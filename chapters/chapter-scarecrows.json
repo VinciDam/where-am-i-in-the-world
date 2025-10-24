@@ -1,0 +1,28 @@
+{
+    "content": [
+        { "block": [
+            "we thought we raised the dead. ", {"pause": 650},
+            "we thought we raised the dead with our walk. ", {"pause": 650},
+            "we thought we raised the dead with our walk, ", {"pause": 450},
+            "our talk about rain and mud and sea swans. ", {"pause": 650},
+            "we thought we ",
+            "raised the dead but the dead don’t rise to rain and mud and sea swans."
+        ], "align": "justify"},
+        {"clearText": true, "delay": 1800},
+        { "block": [
+            "in Denmark, scarecrows fold at belly like hands blinking ",
+            "in a farewell. ", {"pause": 450},
+            "but crows know their way and beat the farewell with a ",
+            {"value": "wait", "link": "chapter-wait"}
+        ], "align": "justify"},
+        "",
+        {"pause": 750},
+        { "block": [
+            "they will fold and fold", "",
+            "(fold at belly and open high)", "",
+            {"pause": 650},
+            "they will fold and fold ", "",
+            "and, in a moment, they will stop."
+        ], "align": "center"}
+    ]
+} 

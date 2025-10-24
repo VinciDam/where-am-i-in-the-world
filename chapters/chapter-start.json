@@ -1,0 +1,7 @@
+{
+    "content": [
+        {"pause": 1200},
+        {"block": [{"value": "where", "link": "chapter-intro"}, " am i in the world?"],
+    "align": "center"}
+    ]
+}

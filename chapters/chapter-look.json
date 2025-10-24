@@ -1,0 +1,25 @@
+{
+    "content": [
+        { "block": [
+            "“and look at the floating flower!“",
+            "", "",
+            "“look!“", "",
+            {"pause": 450},
+            "“look!“", "",
+            "",
+            {"pause": 850},
+            "“it flaps its wings and rise", "",
+            "like Christ“", "",
+            "",
+            "“like Christ, it rise“", "",
+            "“like Christ, it ", {"value": "rise", "link": "chapter-rise"}, 
+            "“", "",
+            "“it rise!“", "",
+            "",
+            "“look“ and “look!“", "",
+            "",
+            {"pause": 850},
+            "(but you don't look)"
+        ], "align": "center" }
+    ]
+}

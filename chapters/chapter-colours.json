@@ -1,0 +1,19 @@
+{
+    "content": [
+        { "block": "to paint a landscape in words is to practice patience.", "align": "center" },
+        { "pause": 600 },
+        "",
+        { "block": "if i tell you that that day / in that hour / we stood with each other, above us, sky of hazy daze, far-front currents blue suede, nordland blue to lakeville, shallow waters foghorn, around us, reeds taupe grey, their swaying stalks sorrel felt.", "align": "justify"},
+        "",
+        { "pause": 1000 },
+        { "block": [ "if i tell you that to write a landscape is to practice patience, what would you     ",
+        {
+            "value": "view",
+            "link": "chapter-view",
+            "audio": "audio/Onibaba.mp3", "volume": 1.3    
+        }, "         "], "align":"justify"},
+        { "pause": 600 },
+        { "block": " in view of words?", "align": "right" }
+        ]
+  }
+  

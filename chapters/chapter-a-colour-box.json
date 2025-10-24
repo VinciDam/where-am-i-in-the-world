@@ -1,0 +1,22 @@
+{
+    "content": [
+        { "video": "videos/purple_bleb_window_fixed.mp4", "width": "70%" },
+        { "clearText": true, "delay": 10700 },
+        { "block": [
+            {"pause": 525},
+            "a ", {"em": "Colour Box"}, " was named the ",
+            {"em": "first ballet in film."}, "",
+            "our tuft, the first ballet on window.", "",
+            "it moves ", 
+            {"value": "as we move", "link": "chapter-as-we-move", "audio": "audio/train-djean.mp3", "volume": 0.5},
+            ",", "",
+            "",
+            "up and down and left and right,", "",
+            "",
+            {"pause": 725},
+            "it moves as we move,", "", {"pause": 525},
+            "forever framed."
+        ], "align": "center"
+    }
+    ]
+}

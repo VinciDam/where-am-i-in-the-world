@@ -1,0 +1,14 @@
+{
+    "content": [
+      {
+        "block": [
+          "and so will the ", 
+          { "value": "hour", "link": "chapter-clock", "audio": "audio/clock-single.mp3" },
+          " be set" ],
+          "align": "center"
+        },
+      {"block": ["to a memory"], "align": "center"},
+      {"block": ["of some folkloric event"], "align": "center"}
+        ]
+  }
+  

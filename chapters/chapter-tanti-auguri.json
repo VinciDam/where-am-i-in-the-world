@@ -1,0 +1,19 @@
+{
+    "content": [
+        {
+        "videoGrid": {
+          "rows": 1,
+          "cols": 2,
+          "videos": [
+            "videos/output_vid1.mp4",
+            "videos/output_vid2.mp4"
+          ]
+        }
+      }, {"clearText": true, "delay": 18000},
+        { "block": [
+            {"value": "look", "link": "chapter-look", "audio": "audio/champagnepop.mp3"},
+            " at us,", {"pause": 800},
+            "", "drinking from plastic cups on municipal grass!"
+        ], "align": "center" }
+    ]
+}

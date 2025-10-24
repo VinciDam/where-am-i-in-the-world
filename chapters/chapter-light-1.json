@@ -1,0 +1,7 @@
+{
+    "content": [
+        {"block": ["you and i walk the town, for ", {"em": "There"}, " is where Josephus ",
+        "sold his wares - ", {"pause": 400}, "Josephus, remember, for whom the sun did not pause but ",
+        {"value": "lengthen", "link": "chapter-lengthen"}, "."], "align": "justify"}
+    ]
+}

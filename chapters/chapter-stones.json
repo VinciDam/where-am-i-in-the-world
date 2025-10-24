@@ -1,0 +1,18 @@
+{
+    "content": [
+        "up north, we find a burgundy stone.",
+        "",
+        "in the silt, we find a snowflake flint.",
+        "",
+        "girt by tides, a chert imparts",
+        "",
+        { "text": "sand to sea to palm", "indent": 35 },
+        "",
+        { "text": "your pocket:", "indent": 35 },
+        { "pause": 1300 },
+        { "block": [ "a wet ", { "pause": 600 },
+            { "value": "trace", "link": "chapter-trace", 
+              "audio": "audio/vinci-pure-dark.mp3", "volume": 0.5 },
+            " where", "", { "pause": 600 },  "the heart is."], "align": "right"}
+            ]
+}

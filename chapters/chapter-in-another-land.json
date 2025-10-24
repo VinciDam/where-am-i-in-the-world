@@ -1,0 +1,21 @@
+{
+    "content": [
+        "what have you heard about Denmark?", "",
+        "",
+        "       white sheets & fences", "",
+        "       sea swans", "",
+        "       cakes with raspberries", "",
+        "       quiet churchbells through the night", "",
+        {"pause": 650},
+        "       ", {"value": "scarecrows", "link": "chapter-scarecrows",
+        "audio": "audio/ScareCroCombo.mp3"}, "",
+        {"pause": 850},
+        "       rounded stones in many colours", "",
+        "       still sea and", "",
+        "       stills of sea", "",
+        "       green & deep & deep & green", "",
+        {"pause": 850},
+        "",
+        "           perhaps no wind tomorrow?"
+    ]
+}

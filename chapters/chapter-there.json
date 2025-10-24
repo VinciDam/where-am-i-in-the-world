@@ -1,0 +1,22 @@
+{
+    "content": [
+      { "block": [ "on the second night, ",
+        { "em":  "there" }, " becomes a place. ", { "pause": 600 },
+        "we hold it in my lap, for ",
+        { "em":  "There" }, " is a 33-meter cliff captured in a single sheet of paper." ],
+        "align": "justify" }, { "pause": 1000 },
+      "",
+      "",
+      { "block": "the cliff is staggered.", "align": "center" },
+      { "pause": 1200 },
+      "",
+      "",
+      { "block": [ "some say, it resembles steps that ",
+      {
+        "value": "wend",
+        "link": "chapter-wend"
+      }, 
+      " from sea to land from land to sea. some say it resembles steps, but no one knows who is walking."
+    ], "align": "justify" }
+    ]
+  }

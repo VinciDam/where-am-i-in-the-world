@@ -1,0 +1,32 @@
+{
+    "content":
+    [
+        {
+            "block": [
+                "after days of calling, gathering, collecting, after days of waiting ",
+                "and a day of travelling, we were married on December 4th, 2024.",
+                "", "",
+                {"pause": 800},
+                "no one we knew was there.", {"pause": 650}
+    ], "align": "justify"
+        },
+        "we had the island, and we had each other.",
+        {"clearText": true, "delay": 1300},
+        "we were married by a woman whose name we don’t remember. ", "",
+        {"pause": 650},
+        "our wedding was witnessed by two whose names we never knew.",
+        "", "",
+        {"pause": 800},
+        {
+            "block": [
+                "with them, we spoke about the weather and drank sweet muscat wine. " ,
+                {"pause": 650},
+                "we bought cake, drank champagne, walked to a cliff, ",
+                "stood by the sea, stood with the sea, and then returned."
+            ], "align": "justify"
+        },
+        "", "", "",
+        {"pause": 650},
+        "this return is a ", {"value": "poem", "link": "chapter-beginning"}, "."
+    ]
+}

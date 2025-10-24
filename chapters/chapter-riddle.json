@@ -1,0 +1,25 @@
+{
+    "content": [
+        { 
+            "block": ["in every window, two ceramic dogs. when facing out, the owner is out, when facing in, the owner is in. ",
+            {"pause": 650}, "in one window, two dogs face each other."], 
+            "align": "justify" }, { "pause": 750 },
+        "",
+        { "block": [ "has ", {"em": "in"}, " become ", {"em": "out"}, "?"], "align": "center"},
+        { "block": [ "has ", {"em": "out"}, " become ", {"em": "in"}, "?"], "align": "center"},
+        "",
+        { "clearText": true, "delay": 1000 },
+        { "block": ["is ", {"em": "out"}, " dreaming of home / ", {"em": "in"}, " dreaming of sea, or"], "align": "center" },
+        { "block": ["are they on their way (", {"em": "out"}, " to ", {"em": "in"}, " / ", {"em": "in"}, " to ", {"em": "out"}, ")" ], "align": "center" },
+        "",
+        { "block": "/ snout to snout /", "align": "center" },
+        "",
+        { "text": "no doubt, ", "indent": "40"}, { "pause": 600 },
+        { "value": "converging", "link": "chapter-converging" }, ".",
+        { "pause": 700 },
+        "",
+        "",
+        { "image": "images/aero-dogs.jpg", "width": "40%", 
+        "marginLeft": "15%" }
+    ]
+  }

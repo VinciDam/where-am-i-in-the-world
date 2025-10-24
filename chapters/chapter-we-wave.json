@@ -1,0 +1,34 @@
+{
+    "content": [
+        {"block": [
+            "the first ballet returns in sea to lead a waterway, ", {"pause": 400}, "a narrow ",
+            "channel. ", {"pause": 550}, "there is longing in how she stays behind, for we came, ",
+            {"pause": 350}, "we went, ", {"pause": 350}, "we came together."
+        ], "align": "justify"},
+        {"clearText": true, "delay": 1000},
+        {"pause": 800}, 
+        {"video": "videos/purple_bleb_sea_fixed_slower.mp4", "width": "60%"},
+        {"pause": 14000},
+        "(one day, we'll meet again", "",
+        "", "",
+        {"pause": 850},
+        "                                    farewell,", "",
+        {"pause": 850},
+        "                                                    farewell.)",
+        {"clearText": true, "delay": 2300},
+        {"pause": 4000},
+        {"wordSequence": "by katarina gotic damiani and fabio damiani"},
+        {"pause": 2000},
+        {"block": ["we thank the town of Ærøskøbing, the ferry and trains ICE 608 and 699, ",
+        "EC 398 and 397 (one of which tackled a boar), we thank the Voderup Klint (our temporary ",
+        {"em": "There"}, "), ",
+        "we thank the swans and ducks and dry mugworts, ",
+        "we thank the heron, we thank the woman who sold us cakes, we thank the cakes, ","we thank the ",
+        "sweet muscat wine, we thank the municipal grass, we thank the purple tuft and we thank our ",
+        "witnesses, we thank Susanne for marrying us, we thank those who called and those who wrote, ",
+        "we thank those we missed."], "align": "justify"},
+        {"clearText": true, "delay": 5000},
+        {"pause": 20000},
+        {"restartNarrative": true}
+    ]
+}

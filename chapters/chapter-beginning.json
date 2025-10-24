@@ -1,0 +1,31 @@
+{
+    "content": 
+    [
+      { "pause": 1200 },
+      "one could say that this day depends on a thousand ",
+      { 
+        "value": "accidents", 
+        "link": "chapter-accidents" 
+      },
+      " and two parts:",
+      "",
+      {"pause": 650},
+      {"em": "Part 1", "indent": 17},
+      " and",
+      "",
+      {"em": "Part 2.", "indent": 17},
+      "",
+      "",
+      {"pause": 750},
+      {"em": "Part 1", "indent": 35},
+      " is you. ",
+      {"em": "Part 2"},
+      " is me.",
+      "",
+      {"pause": 750},
+      {"em": "Part 2", "indent": 35},
+      " is you. ",
+      {"em": "Part 1"},
+      " is me."
+    ]
+  }

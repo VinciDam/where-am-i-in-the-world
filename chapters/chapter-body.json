@@ -1,0 +1,18 @@
+{
+    "content": [
+        { "block": "we film our bodies and our bodies are filmed.", "align": "center"},
+        "",
+        "",
+        { "block": ["sped up, we move in bursts,", "", "frame-to-frame, as if sensing a trail."], "align": "center"},
+        "",
+        "",
+        { "block": ["i turn around: you bow.", "", "i bow: you turn around."], "align": "center" },
+        {"clearText": true, "delay": 2000},
+        { "block": ["we could go forever",
+        ", for the trail has no end like the trees have no end, like the leaves have no end, ", 
+        "like the land has no end, like the sea has no end, like the wind has no end, ",
+        "like the clouds have no end, like my turn has no end, like your turn has no end, ",
+        "like my bow has no end, like your bow has ", {"value": "no end", "link": "chapter-no-end"}, "."],
+        "align": "justify" }
+    ]
+}

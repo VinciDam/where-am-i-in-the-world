@@ -1,0 +1,28 @@
+{
+    "content": [
+        "that night you write:",
+        { "pause": 800 },
+        "",
+        "",
+        { "block": [
+            {"em": "maudlin "},
+            {"value": "by your side", "link": "chapter-by-your-side"},
+            {"em": " since the age of five, "},
+            "",
+            {"em": "like a comfortably leaning wheel. "}, 
+            "",
+            "",
+            "a leaning wheel is an earthmover.",
+            "",
+            "",
+            "it digs and digs",
+            "",
+            "and digs and digs:",
+            "",
+            "",
+            "mostly sideways,",
+            "",
+            "usually uphill."
+        ], "align": "center" }
+        ]
+  }

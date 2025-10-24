@@ -1,0 +1,7 @@
+{
+    "content": [
+        { "block": "avast field of grass", "align": "center" },
+        { "pause": 750 },
+        { "block": [ {"value": "there", "link": "chapter-there" }, " is no telling" ], "align": "center" }
+    ]
+}

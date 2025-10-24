@@ -1,0 +1,25 @@
+{
+    "content":
+    [
+        {"block": [
+            "we wait between the ", {"em": "pass-along"}, " plants, christmas lights and ",
+            "conifers. ",  {"pause": 450}, "you hold an umbrella, unlike anything in the room. ",
+            {"pause": 450}, "i blow my nose and fold the tissue. ",
+            {"pause": 450}, "you say “maybe”. i say “maybe”. ", {"pause": 450},
+            "christmas lights don’t blink and candles don’t blink. ",
+            "in the corner, a puzzle box for children: ", 
+            {"pause": 500}, "you can put a smaller ",
+            "dog in the belly of a bigger dog, their shape all the same. ", {"pause": 500},
+            "you can match mickey to mickey, donald to donald. you can memorise. ", 
+            {"pause": 500}, "you can see an apple but you don’t bite, for the apple is not. ",
+            {"pause": 500}, "you can count the jackets of those marrying in another room. ",
+            {"pause": 500}, "you can count the lights and you can count the light ",
+            "they make. you can count the ", {"em": "wandering clouds"}, ","
+        ], "align": "justify"},
+        "",
+        {"block": ["their petals ", 
+        {"value": "light", "link": "chapter-light-1", "audio": "audio/step-birds.mp3"}, 
+        " the space.", "",
+        "from form they draw a shadow."], "align": "center"}
+    ]
+}

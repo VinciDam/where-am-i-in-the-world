@@ -1,0 +1,18 @@
+{
+    "content": [
+    { "block": "a walk could last forever like the steps could last forever: in and out and out of sea.",
+    "align": "justify" }, { "pause": 750 },
+    "",
+    { "block": "in a call, father said i walked out of name / his name / became a woman.", "align": "justify"},
+    { "pause": 950 },
+    "",
+    { "block": [ "in the call, he used a verb of no ",
+      {
+        "value": "return",
+        "link": "chapter-return",
+        "audio": "audio/train-door.mp3", "volume": 0.3
+    },
+      " – odšetati – out being a prefix, as in outwalk, though my intention was not to overtake."],
+      "align": "justify"}
+        ]
+  }

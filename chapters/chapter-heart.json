@@ -1,0 +1,19 @@
+{
+    "content": [
+        "Towards ",
+        {"em": "There"}, 
+        "we meet a pony. He calls from afar. We touch his forehead and he pushes back, meeting our hands.",
+        { "clearText": true },
+        "To make a pony from a hand:",
+        "",
+        "                           one finger for head",
+        "                           all others for legs:",
+        "                                            ",
+        { "value": "three", "link": "chapter-three" },
+        " on one side",
+        "                                                 one on other",
+        "                                  each pony slightly ",
+        { "value": "leaning", "link": "chapter-leaning" },
+        "."
+        ]
+  }

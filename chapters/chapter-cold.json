@@ -1,0 +1,21 @@
+{
+    "content": [
+        "S. starts a message with ",
+        {"em": "hallow"}, { "pause": 600 },
+        "",
+        "S. says ",
+        {"em": "the train looks like it’s cold inside a little jacket"}, { "pause": 600 },
+        "",
+        "to S., there really is nobody out there", { "pause": 600 },
+        "",
+        "to S., there really are such ",
+        {
+          "value": "colours",
+          "link": "chapter-colours",
+          "audio": "audio/banjo-high.mp3",
+          "volume": 0.3
+        },
+      " in the pale of winter.", { "pause": 900 },
+      { "image": "images/jacketrain.jpg" }
+    ]
+  }

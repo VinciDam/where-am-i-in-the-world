@@ -1,0 +1,16 @@
+{
+    "content": [
+        "Part 1, how did we meet?",
+        {"pause": 750}, "", "", "",
+        "Part 2, have we met in person?",
+        {"pause": 775},
+        "", "", "", "", "", "", "", "", "", "",
+        "---", "",
+        "* Part 1 and 2: kindly attach ", "",
+        "                       ",
+        {"value": "all the days", "link": "chapter-all-the-days"},
+        " you lived together", "",
+        "                       (not including holidays", "",
+        "                       (not including visits))"
+    ]
+}

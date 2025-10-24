@@ -1,0 +1,20 @@
+{
+    "content": [
+        { "block": [
+            "last night, you had an ", {"value": "eraser", "link": "chapter-eraser"},
+            {"pause": 450},
+            " older than paper. ", {"pause": 450}, "clover. ", {"pause": 450}, 
+            "your eraser a sprig of clover,", ""
+        ], "align": "justify" },
+        "",
+        {"pause": 450},
+        {"block": "how clever!", "align": "center"},
+        "",
+        { "block": [
+            "                                              i watch the ",
+            "clover left and right, up and down, sweeping through the ",
+            "rubber dust. like hugs and tea and tea and crying, somehow, but ",
+            "where am i in this world?"
+        ], "align": "justify" }
+    ]
+}

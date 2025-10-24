@@ -1,0 +1,16 @@
+{
+    "content": [
+        {"block": [
+            "last night, large sea boulders lit down under. ", 
+            {"pause": 450}, "lit from water that ",
+            "is deep and dark, deep and wide, they grow tall and taller, far ",
+            "beyond me. ", {"pause": 450}, "they pass as we wave. ", {"pause": 450}, 
+            "we wave and they wave. ", {"pause": 450}, 
+            "they wave and ",
+            {"value": "we wave", "link": "chapter-we-wave", 
+            "audio": "audio/closing-credits.mp3", "volume": 1.5}, 
+            ", for here i am / meant to be / but where ",
+            "am i in this world?"
+        ], "align": "justify"}
+    ]
+}
