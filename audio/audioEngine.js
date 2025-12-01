@@ -117,7 +117,7 @@ export function stopChapterAudio() {
   try {
     const ctx = getAudioContext();
     // Don't resume yet (avoids autoplay restrictions)
-    const response = await fetch("audio/background.mp3");
+    const response = await fetch("audio/background_160.mp3");
     const arrayBuffer = await response.arrayBuffer();
     backgroundBuffer = await ctx.decodeAudioData(arrayBuffer);
     console.log("Background audio preloaded.");
