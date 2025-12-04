@@ -1,10 +1,12 @@
 # Ignore media files
-*.mp3
-*.mp4
+# *.mp3
+# *.mp4
 *.mov
-*.jpg
+# *.jpg
 *.jpeg
-*.png
+# *.png
+videos/alphabet/
+images/alphabet/
 
 # macOS system files
 .DS_Store
