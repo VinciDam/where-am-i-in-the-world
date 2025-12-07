@@ -1,6 +1,8 @@
 {
     "content": [
-        "our marriage is witnessed by two. of them, we know that",
+        "our marriage is witnessed by two. ",
+        {"pause": 450},
+        "of them, we know that",
         "", "",
         { "pause": 625 },
         "      1) the rain might stop and the weather is harsh.",

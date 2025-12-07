@@ -1,7 +1,9 @@
 {
     "content": [
         { "block": [ 
-            "a purple tuft rose to view. levelled with the lens, it stayed in the ", 
+            "a purple tuft rose to view. ",
+            {"pause": 450},
+            "levelled with the lens, it stayed in the ", 
             {"em": "tingling town"}, ", the forest, across the solar panels, a moss-green meadow. ",
             {"pause": 600},
             "it resembles a non-slip mat that shed its plastic. ",

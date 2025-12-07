@@ -18,6 +18,7 @@
             "it digs and digs",
             "",
             "and digs and digs:",
+            {"pause": 450},
             "",
             "",
             "mostly sideways,",

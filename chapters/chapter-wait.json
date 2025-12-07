@@ -19,7 +19,7 @@
         "",
         {"block": ["their petals ", 
         {"value": "light", "link": "chapter-light-1", "audio": "audio/step-birds.mp3"}, 
-        " the space.", "",
+        " the space.", "", {"pause": 250},
         "from form they draw a shadow."], "align": "center"}
     ]
 }

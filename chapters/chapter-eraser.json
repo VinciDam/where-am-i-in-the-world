@@ -13,6 +13,7 @@
         "                     we filtered", "",
         "                     a free space", "",
         "",
+        {"pause": 250},
         "                             & the rope on which it", "",
         "                             hangs"
     ]

@@ -1,6 +1,7 @@
 {
     "content": [
         "what have you heard about Denmark?", "",
+        {"pause": 550},
         "",
         "       white sheets & fences", "",
         "       sea swans", "",

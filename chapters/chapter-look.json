@@ -8,7 +8,7 @@
             "“look!“", "",
             "",
             {"pause": 850},
-            "“it flaps its wings and rise", "",
+            "“it flaps its wings ", {"pause": 450}, "and rise", "",
             "like Christ“", "",
             "",
             "“like Christ, it rise“", "",

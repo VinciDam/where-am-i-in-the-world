@@ -16,7 +16,9 @@
         "value": "wend",
         "link": "chapter-wend"
       }, 
-      " from sea to land from land to sea. some say it resembles steps, but no one knows who is walking."
+      " from sea to land from land to sea. ",
+      { "pause": 600 },
+      "some say it resembles steps, but no one knows who is walking."
     ], "align": "justify" }
     ]
   }

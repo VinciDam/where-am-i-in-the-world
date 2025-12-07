@@ -8,7 +8,7 @@
             "we wave and they wave. ", {"pause": 450}, 
             "they wave and ",
             {"value": "we wave", "link": "chapter-we-wave", 
-            "audio": "audio/closing-credits.mp3", "volume": 1.5}, 
+            "audio": "audio/closing-credits.mp3", "volume": 1.8}, 
             ", for here i am / meant to be / but where ",
             "am i in this world?"
         ], "align": "justify"}

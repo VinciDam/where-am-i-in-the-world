@@ -17,7 +17,7 @@
             {"pause": 625}, "here, a heron lines a flight, its flight, and ducks line a flight, their flight, and two swans draw themselves."
         ], "align": "justify"},
         { "clearText": true, "delay": 2000 },
-        { "block": ["in our dance, we start with dots, move to lines and fill", "", "everything"], "align": "center" },
+        { "block": ["in our dance, we start with dots, move to lines and fill", "", "everything."], "align": "center" },
         { "clearText": true, "delay": 1800 },
         { "block": [
             "on my right, your ", {"value": "hand", "link": "chapter-hand"}, " draws a flower:",
