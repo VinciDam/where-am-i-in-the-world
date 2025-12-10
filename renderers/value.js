@@ -20,7 +20,7 @@ export function showValue(item, next, contentEl, activeTimeouts, lastWasValueRef
 
     // Start background loop on second user click
     if (linkClicks >= BACKGROUND_START_AFTER) {
-      await startBackgroundOnce("audio/background_160.mp3");
+      await startBackgroundOnce("https://pub-483592edf5cb4460ac2426340c4e6402.r2.dev/audio/background_160.mp3");
     }
 
     // Play foreground audio if present

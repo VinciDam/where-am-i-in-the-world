@@ -1,22 +1,44 @@
 {
-    "content": [
-        "what have you heard about Denmark?", "",
-        {"pause": 550},
-        "",
-        "       white sheets & fences", "",
-        "       sea swans", "",
-        "       cakes with raspberries", "",
-        "       quiet churchbells through the night", "",
-        {"pause": 650},
-        "       ", {"value": "scarecrows", "link": "chapter-scarecrows",
-        "audio": "audio/scarecrow.mp3"}, "",
-        {"pause": 850},
-        "       rounded stones in many colours", "",
-        "       still sea and", "",
-        "       stills of sea", "",
-        "       green & deep & deep & green", "",
-        {"pause": 850},
-        "",
-        "           perhaps no wind tomorrow?"
-    ]
+  "content": [
+    "what have you heard about Denmark?",
+    "",
+    {
+      "pause": 550
+    },
+    "",
+    "       white sheets & fences",
+    "",
+    "       sea swans",
+    "",
+    "       cakes with raspberries",
+    "",
+    "       quiet churchbells through the night",
+    "",
+    {
+      "pause": 650
+    },
+    "       ",
+    {
+      "value": "scarecrows",
+      "link": "chapter-scarecrows",
+      "audio": "https://pub-483592edf5cb4460ac2426340c4e6402.r2.dev/audio/scarecrow.mp3"
+    },
+    "",
+    {
+      "pause": 850
+    },
+    "       rounded stones in many colours",
+    "",
+    "       still sea and",
+    "",
+    "       stills of sea",
+    "",
+    "       green & deep & deep & green",
+    "",
+    {
+      "pause": 850
+    },
+    "",
+    "           perhaps no wind tomorrow?"
+  ]
 }

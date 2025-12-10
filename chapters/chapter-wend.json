@@ -1,11 +1,24 @@
-{ "content": [
-    { "block": [ "last night, ",
-    {"pause": 200},
-    "typically slowly, ",
-    {"pause": 200},
-    "as if an answer to a ",
-        { "value": "riddle", "link": "chapter-riddle", "audio": "audio/cheepcheep.mp3" },
+{
+  "content": [
+    {
+      "block": [
+        "last night, ",
+        {
+          "pause": 200
+        },
+        "typically slowly, ",
+        {
+          "pause": 200
+        },
+        "as if an answer to a ",
+        {
+          "value": "riddle",
+          "link": "chapter-riddle",
+          "audio": "https://pub-483592edf5cb4460ac2426340c4e6402.r2.dev/audio/cheepcheep.mp3"
+        },
         ":"
-    ], "align": "center" }
-]
+      ],
+      "align": "center"
+    }
+  ]
 }

@@ -1,48 +1,139 @@
 {
-    "content": [
-        {"block": [
-            "the first ballet returns in sea to lead a waterway, ", {"pause": 400}, "a narrow ",
-            "channel. ", {"pause": 550}, "there is longing in how she stays behind, for we came, ",
-            {"pause": 350}, "we went, ", {"pause": 350}, "we came together."
-        ], "align": "justify"},
-        {"clearText": true, "delay": 1000},
-        {"pause": 800}, 
-        {"video": "videos/purple_bleb_sea_fixed_slower.mp4", "width": "60%"},
-        {"pause": 14000},
-        "(one day, we'll meet again", "",
-        "", "",
-        {"pause": 850},
-        "                                    farewell,", "",
-        {"pause": 850},
-        "                                                    farewell.)",
-        {"clearText": true, "delay": 2300},
-        {"pause": 4000},
-        {"wordSequence": "by katarina gotic damiani and fabio vincenzo damiani"},
-        {"pause": 4000},
-        {"block": ["we thank the town of Ærøskøbing, the ferry and trains ICE 608 and 699, ",
+  "content": [
+    {
+      "block": [
+        "the first ballet returns in sea to lead a waterway, ",
+        {
+          "pause": 400
+        },
+        "a narrow ",
+        "channel. ",
+        {
+          "pause": 550
+        },
+        "there is longing in how she stays behind, for we came, ",
+        {
+          "pause": 350
+        },
+        "we went, ",
+        {
+          "pause": 350
+        },
+        "we came together."
+      ],
+      "align": "justify"
+    },
+    {
+      "clearText": true,
+      "delay": 1000
+    },
+    {
+      "pause": 800
+    },
+    {
+      "video": "https://pub-483592edf5cb4460ac2426340c4e6402.r2.dev/videos/purple_bleb_sea_fixed_slower.mp4",
+      "width": "60%"
+    },
+    {
+      "pause": 14000
+    },
+    "(one day, we'll meet again",
+    "",
+    "",
+    "",
+    {
+      "pause": 850
+    },
+    "                                    farewell,",
+    "",
+    {
+      "pause": 850
+    },
+    "                                                    farewell.)",
+    {
+      "clearText": true,
+      "delay": 2300
+    },
+    {
+      "pause": 4000
+    },
+    {
+      "wordSequence": "by katarina gotic damiani and fabio vincenzo damiani"
+    },
+    {
+      "pause": 4000
+    },
+    {
+      "block": [
+        "we thank the town of Ærøskøbing, the ferry and trains ICE 608 and 699, ",
         "EC 398 and 397 (one of which tackled a boar), ",
-        {"pause": 300}, 
-        "we thank Vi Khi Nao for ", {"em": "Tarragon, Are You a Wild Boar?"}, ", ",
-        "Florence Ng for ", {"em": "To the wild boar swimming in Victoria Harbour"}, ", ",
-        "Ovid for the runaway boar, Paul Celan for ", {"em": "In the shape of a boar"}, ", ",
-        {"pause": 300}, 
-        "we thank Onibaba for ", {"em": "there is no telling"}, ", we thank Handel (& George Gouraud) ",
-        "for ", {"em": "a chorus of 4000 voices recorded with phonograph over 100 yards away. "},
-        {"pause": 300}, 
+        {
+          "pause": 300
+        },
+        "we thank Vi Khi Nao for ",
+        {
+          "em": "Tarragon, Are You a Wild Boar?"
+        },
+        ", ",
+        "Florence Ng for ",
+        {
+          "em": "To the wild boar swimming in Victoria Harbour"
+        },
+        ", ",
+        "Ovid for the runaway boar, Paul Celan for ",
+        {
+          "em": "In the shape of a boar"
+        },
+        ", ",
+        {
+          "pause": 300
+        },
+        "we thank Onibaba for ",
+        {
+          "em": "there is no telling"
+        },
+        ", we thank Handel (& George Gouraud) ",
+        "for ",
+        {
+          "em": "a chorus of 4000 voices recorded with phonograph over 100 yards away. "
+        },
+        {
+          "pause": 300
+        },
         "we thank the Voderup Klint (our temporary ",
-        {"em": "There"}, "), ",
+        {
+          "em": "There"
+        },
+        "), ",
         "we thank the swans and ducks and dry mugworts, ",
-        "we thank the heron, we thank the woman who sold us cakes, we thank the cakes, ","we thank the ",
+        "we thank the heron, we thank the woman who sold us cakes, we thank the cakes, ",
+        "we thank the ",
         "sweet muscat wine, we thank the municipal grass, ",
-        {"pause": 300}, 
+        {
+          "pause": 300
+        },
         "we thank the purple tuft and we thank our ",
         "witnesses, we thank Susanne for marrying us, ",
-        {"pause": 300}, 
+        {
+          "pause": 300
+        },
         "we thank those who called and those who wrote, ",
-        {"pause": 300}, 
-        "we thank those we missed."], "align": "justify"},
-        {"clearText": true, "delay": 5000},
-        {"pause": 20000},
-        {"restartNarrative": true}
-    ]
+        {
+          "pause": 300
+        },
+        "we thank those we missed."
+      ],
+      "align": "justify"
+    },
+    {
+      "clearText": true,
+      "delay": 5000
+    },
+    {
+      "pause": 20000
+    },
+    {
+      "restartNarrative": true
+    }
+  ]
 }

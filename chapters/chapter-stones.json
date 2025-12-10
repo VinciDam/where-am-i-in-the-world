@@ -1,19 +1,46 @@
 {
-    "content": [
-        "up north, we find a burgundy stone.",
+  "content": [
+    "up north, we find a burgundy stone.",
+    "",
+    "in the silt, we find a snowflake flint.",
+    {
+      "pause": 450
+    },
+    "",
+    "girt by tides, a chert imparts",
+    "",
+    {
+      "text": "sand to sea to palm",
+      "indent": 35
+    },
+    "",
+    {
+      "text": "your pocket:",
+      "indent": 35
+    },
+    {
+      "pause": 1300
+    },
+    {
+      "block": [
+        "a wet ",
+        {
+          "pause": 600
+        },
+        {
+          "value": "trace",
+          "link": "chapter-trace",
+          "audio": "https://pub-483592edf5cb4460ac2426340c4e6402.r2.dev/audio/vinci-pure-dark.mp3",
+          "volume": 0.5
+        },
+        " where",
         "",
-        "in the silt, we find a snowflake flint.",
-        {"pause": 450},
-        "",
-        "girt by tides, a chert imparts",
-        "",
-        { "text": "sand to sea to palm", "indent": 35 },
-        "",
-        { "text": "your pocket:", "indent": 35 },
-        { "pause": 1300 },
-        { "block": [ "a wet ", { "pause": 600 },
-            { "value": "trace", "link": "chapter-trace", 
-              "audio": "audio/vinci-pure-dark.mp3", "volume": 0.5 },
-            " where", "", { "pause": 600 },  "the heart is."], "align": "right"}
-            ]
+        {
+          "pause": 600
+        },
+        "the heart is."
+      ],
+      "align": "right"
+    }
+  ]
 }

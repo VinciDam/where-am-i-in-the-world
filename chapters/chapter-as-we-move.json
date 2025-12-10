@@ -1,11 +1,21 @@
 {
-    "content": [
-        { "block": [
-            "we sit on a train, she and i, we sit on a train, a 23-minute ride. ", {"pause": 600},
-            "we sit on a train and we change seats / row back, row forth / we change seats ",
-            "and sand pours small, shimmering, like a slow-filling ",
-            {"value": "infinity", "link": "chapter-infinity", "audio": "audio/train-frondsburg.mp3"}, 
-            " pool."
-        ], "align": "justify" }
-    ]
+  "content": [
+    {
+      "block": [
+        "we sit on a train, she and i, we sit on a train, a 23-minute ride. ",
+        {
+          "pause": 600
+        },
+        "we sit on a train and we change seats / row back, row forth / we change seats ",
+        "and sand pours small, shimmering, like a slow-filling ",
+        {
+          "value": "infinity",
+          "link": "chapter-infinity",
+          "audio": "https://pub-483592edf5cb4460ac2426340c4e6402.r2.dev/audio/train-frondsburg.mp3"
+        },
+        " pool."
+      ],
+      "align": "justify"
+    }
+  ]
 }

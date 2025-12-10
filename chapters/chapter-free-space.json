@@ -1,27 +1,50 @@
 {
-    "content": [
-        {"block": [
-            "last night, we had an eraser older than paper. ",
-            {"pause": 250},
-            "clover. ",
-            {"pause": 250},
-            "our ",
-            { "value": "eraser", "link": "chapter-eraser" },
-            " a sprig of clover,"
-        ], "align": "justify" },
-        {"pause": 250},
-        "",
-        "                          how clever!",
-        "",
-        {"block": [
-            {"pause": 250},
-            "                                                   we watch our clover left and right, up and down, sweeping through the rubber dust. ",
-            {"pause": 250},
-            "like hugs and tea and tea and crying, ",
-            {"pause": 250},
-            "somehow, ",
-            {"pause": 250},
-            "but where am i in this world?"
-            ], "align": "justify" }
-    ]
+  "content": [
+    {
+      "block": [
+        "last night, we had an eraser older than paper. ",
+        {
+          "pause": 250
+        },
+        "clover. ",
+        {
+          "pause": 250
+        },
+        "our ",
+        {
+          "value": "eraser",
+          "link": "chapter-eraser"
+        },
+        " a sprig of clover,"
+      ],
+      "align": "justify"
+    },
+    {
+      "pause": 250
+    },
+    "",
+    "                          how clever!",
+    "",
+    {
+      "block": [
+        {
+          "pause": 250
+        },
+        "                                                   we watch our clover left and right, up and down, sweeping through the rubber dust. ",
+        {
+          "pause": 250
+        },
+        "like hugs and tea and tea and crying, ",
+        {
+          "pause": 250
+        },
+        "somehow, ",
+        {
+          "pause": 250
+        },
+        "but where am i in this world?"
+      ],
+      "align": "justify"
+    }
+  ]
 }

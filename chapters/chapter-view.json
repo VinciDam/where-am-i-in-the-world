@@ -1,25 +1,37 @@
 {
   "autoAdvance": {
-      "type": "mediaEnd",
-      "target": "videos/reeds_short.mp4",
-      "next": "chapter-view-text"
+    "type": "mediaEnd",
+    "target": "https://pub-483592edf5cb4460ac2426340c4e6402.r2.dev/videos/reeds_short.mp4",
+    "next": "chapter-view-text"
+  },
+  "content": [
+    {
+      "video": "https://pub-483592edf5cb4460ac2426340c4e6402.r2.dev/videos/reeds_short.mp4",
+      "width": "60%"
     },
-    "content": [
-      {
-        "video": "videos/reeds_short.mp4",
-        "width": "60%"
-      },
-      {
-        "replicateImage": "images/aero_gun_empty.png",
-        "coordinates": [
-          { "x": "25%", "y": "40%" },
-          { "x": "40%", "y": "40%" },
-          { "x": "60%", "y": "40%" },
-          { "x": "75%", "y": "40%" }
-        ],
-        "width": "45%",
-        "interval": 500, 
-        "replaceAfter": 3000
-      }
-    ]
-  }
+    {
+      "replicateImage": "https://pub-483592edf5cb4460ac2426340c4e6402.r2.dev/images/aero_gun_empty.png",
+      "coordinates": [
+        {
+          "x": "25%",
+          "y": "40%"
+        },
+        {
+          "x": "40%",
+          "y": "40%"
+        },
+        {
+          "x": "60%",
+          "y": "40%"
+        },
+        {
+          "x": "75%",
+          "y": "40%"
+        }
+      ],
+      "width": "45%",
+      "interval": 500,
+      "replaceAfter": 3000
+    }
+  ]
+}
