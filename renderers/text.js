@@ -52,15 +52,22 @@ export function showTextItem(item, next, contentEl, activeTimeouts, lastWasValue
 }
 
 export function clearTextThenNext(contentEl, next, activeTimeouts, delay = 1000) {
-  // Cancel any pending timeouts
-  activeTimeouts.forEach(clearTimeout);
+  // Cancel pending timeouts and RAFs
+  for (const entry of activeTimeouts) {
+    if (entry.type === "timeout") clearTimeout(entry.id);
+    if (entry.type === "raf") cancelAnimationFrame(entry.id);
+  }
   activeTimeouts.length = 0;
 
-  // Schedule clearing + next step
-  setTimeout(() => {
+  // Schedule clearing + next
+  const timeoutId = setTimeout(() => {
     contentEl.innerHTML = "";
-    next();
+
+    // Let the DOM update before proceeding
+    queueMicrotask(() => next());
   }, delay);
+
+  activeTimeouts.push({ type: "timeout", id: timeoutId });
 }
 
 
@@ -119,18 +126,29 @@ function revealTextCharByChar(
     contentEl.appendChild(document.createElement("br"));
   }
 
-  // Add indentation instantly before reveal
+  // wrap indent + revealed text in a single container
+  const line = document.createElement("span");
+  line.classList.add("text-line");
+  contentEl.appendChild(line);
+
+  let indentSpan = null;
   if (indent > 0) {
-    const indentSpan = document.createElement("span");
+    indentSpan = document.createElement("span");
     indentSpan.classList.add("preserve-whitespace");
     indentSpan.textContent = " ".repeat(indent);
-    contentEl.appendChild(indentSpan);
+    line.appendChild(indentSpan);
   }
 
+  // this will receive revealed chars
+  let revealSpan = document.createElement("span");
+  revealSpan.classList.add("preserve-whitespace");
+  if (className) revealSpan.classList.add(className);
+  line.appendChild(revealSpan);
+
+  // tokenisation
   const tokens = (text || "").match(/(\s+|\S+)/g) || [];
   let tokenIndex = 0;
   let charIndex = 0;
-  let currentSpan = null;
 
   function scheduleNextFrame() {
     const timeoutId = setTimeout(() => {
@@ -146,35 +164,28 @@ function revealTextCharByChar(
     if (tokenIndex >= tokens.length) {
       lastWasValueRef.current = false;
       if (breakAfter) contentEl.appendChild(document.createElement("br"));
-      activeTimeouts.push(setTimeout(next, WORD_REVEAL_DELAY));
+      
+      const id = setTimeout(next, WORD_REVEAL_DELAY);
+      activeTimeouts.push({ type: "timeout", id });
       return;
     }
 
     const token = tokens[tokenIndex];
 
-    // first char of a token → create a span
-    if (charIndex === 0) {
-      currentSpan = document.createElement("span");
-      if (className) currentSpan.className = className;
-      currentSpan.classList.add("preserve-whitespace");
-      contentEl.appendChild(currentSpan);
-    }
-
-    // If this token is *only whitespace*, reveal it all instantly
+    // whitespace token → append whole token instantly
     if (/^\s+$/.test(token)) {
-      currentSpan.textContent += token; // render all spaces at once
+      revealSpan.textContent += token;
       tokenIndex++;
       charIndex = 0;
-      scheduleNextFrame(); // only one delay
+      scheduleNextFrame();
       return;
     }
 
-    // reveal the next character
-    currentSpan.textContent += token[charIndex];
+    // normal char reveal
+    revealSpan.textContent += token[charIndex];
     charIndex++;
 
     if (charIndex >= token.length) {
-      // token finished → move to next one
       tokenIndex++;
       charIndex = 0;
     }
@@ -184,3 +195,4 @@ function revealTextCharByChar(
 
   nextChar();
 }
+

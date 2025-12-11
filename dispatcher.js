@@ -12,11 +12,11 @@ import { setBackgroundImages, clearBackgroundImages } from './renderers/backgrou
 import { restartNarrative } from "./script.js";
 
 export function dispatchContent(item, next, contentEl, activeTimeouts, lastWasValueRef, onValueClick) {
-  if (typeof item === "string" || item.em || item.text) {
-    showTextItem(item, next, contentEl, activeTimeouts, lastWasValueRef);
-  } else if (item.clearText) {
+  if (item.clearText) {
     const delay = typeof item.delay === "number" ? item.delay : 1000;
     clearTextThenNext(contentEl, next, activeTimeouts, delay);
+  } else if (typeof item === "string" || item.em || item.text) {
+    showTextItem(item, next, contentEl, activeTimeouts, lastWasValueRef);
   } else if (item.value) {
     showValue(item, next, contentEl, activeTimeouts, lastWasValueRef, onValueClick);
   } else if (item.block) {
