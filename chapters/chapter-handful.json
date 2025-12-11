@@ -56,7 +56,7 @@
         {
           "value": "leaning",
           "link": "chapter-leaning",
-          "audio": "https://pub-483592edf5cb4460ac2426340c4e6402.r2.dev/audio/falken-fade.mp3",
+          "audio": "audio/falken-fade.mp3",
           "volume": 0.5
         },
         "."

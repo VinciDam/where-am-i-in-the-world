@@ -5,8 +5,8 @@
         "rows": 1,
         "cols": 2,
         "videos": [
-          "https://pub-483592edf5cb4460ac2426340c4e6402.r2.dev/videos/output_vid1.mp4",
-          "https://pub-483592edf5cb4460ac2426340c4e6402.r2.dev/videos/output_vid2.mp4"
+          "videos/output_vid1.mp4",
+          "videos/output_vid2.mp4"
         ]
       }
     },
@@ -19,7 +19,7 @@
         {
           "value": "look",
           "link": "chapter-look",
-          "audio": "https://pub-483592edf5cb4460ac2426340c4e6402.r2.dev/audio/champagnepop.mp3"
+          "audio": "audio/champagnepop.mp3"
         },
         " at us,",
         {

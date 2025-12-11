@@ -5,6 +5,7 @@
 # *.jpg
 *.jpeg
 # *.png
+*.bak
 audio/background.mp3
 videos/alphabet/
 images/alphabet/

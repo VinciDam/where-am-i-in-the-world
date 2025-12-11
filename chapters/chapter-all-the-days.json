@@ -6,7 +6,7 @@
         {
           "value": "hour",
           "link": "chapter-clock",
-          "audio": "https://pub-483592edf5cb4460ac2426340c4e6402.r2.dev/audio/clock-single.mp3"
+          "audio": "audio/clock-single.mp3"
         },
         " be set"
       ],

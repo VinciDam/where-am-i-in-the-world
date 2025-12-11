@@ -18,7 +18,7 @@
       "pause": 1800
     },
     {
-      "video": "https://pub-483592edf5cb4460ac2426340c4e6402.r2.dev/videos/crop_clock.mp4",
+      "video": "videos/crop_clock.mp4",
       "width": "20%"
     },
     {
@@ -34,7 +34,7 @@
         {
           "value": "cold",
           "link": "chapter-cold",
-          "audio": "https://pub-483592edf5cb4460ac2426340c4e6402.r2.dev/audio/cough-multi.mp3",
+          "audio": "audio/cough-multi.mp3",
           "volume": 1.1
         },
         "."

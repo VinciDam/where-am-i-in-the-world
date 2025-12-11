@@ -35,7 +35,7 @@
       "delay": 950
     },
     {
-      "video": "https://pub-483592edf5cb4460ac2426340c4e6402.r2.dev/videos/jelly-nopause-fixed.mp4",
+      "video": "videos/jelly-nopause-fixed.mp4",
       "width": "50%"
     },
     {
@@ -72,7 +72,7 @@
         {
           "value": "whichever way",
           "link": "chapter-walking",
-          "audio": "https://pub-483592edf5cb4460ac2426340c4e6402.r2.dev/audio/footsteps.mp3",
+          "audio": "audio/footsteps.mp3",
           "volume": 0.5
         },
         " they please.",

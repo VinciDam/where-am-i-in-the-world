@@ -1,19 +1,19 @@
 {
   "autoAdvance": {
     "type": "mediaEnd",
-    "target": "https://pub-483592edf5cb4460ac2426340c4e6402.r2.dev/videos/reeds_short.mp4",
+    "target": "videos/reeds_short.mp4",
     "next": "chapter-view-text"
   },
   "content": [
     {
-      "video": "https://pub-483592edf5cb4460ac2426340c4e6402.r2.dev/videos/reeds_short.mp4",
+      "video": "videos/reeds_short.mp4",
       "width": "60%"
     },
     {
       "pause": 1500
     },
     {
-      "replicateImage": "https://pub-483592edf5cb4460ac2426340c4e6402.r2.dev/images/aero_gun_empty.png",
+      "replicateImage": "images/aero_gun_empty.png",
       "coordinates": [
         {
           "x": "25%",

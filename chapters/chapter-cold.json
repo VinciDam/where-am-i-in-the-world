@@ -25,7 +25,7 @@
     {
       "value": "colours",
       "link": "chapter-colours",
-      "audio": "https://pub-483592edf5cb4460ac2426340c4e6402.r2.dev/audio/banjo-high.mp3",
+      "audio": "audio/banjo-high.mp3",
       "volume": 0.3
     },
     " in the pale of winter.",
@@ -33,7 +33,7 @@
       "pause": 900
     },
     {
-      "image": "https://pub-483592edf5cb4460ac2426340c4e6402.r2.dev/images/jacketrain.jpg"
+      "image": "images/jacketrain.jpg"
     }
   ]
 }

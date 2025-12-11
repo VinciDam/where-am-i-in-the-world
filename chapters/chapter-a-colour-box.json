@@ -1,7 +1,7 @@
 {
   "content": [
     {
-      "video": "https://pub-483592edf5cb4460ac2426340c4e6402.r2.dev/videos/purple_bleb_window_fixed.mp4",
+      "video": "videos/purple_bleb_window_fixed.mp4",
       "width": "70%"
     },
     {
@@ -34,7 +34,7 @@
         {
           "value": "as we move",
           "link": "chapter-as-we-move",
-          "audio": "https://pub-483592edf5cb4460ac2426340c4e6402.r2.dev/audio/train-djean.mp3",
+          "audio": "audio/train-djean.mp3",
           "volume": 0.5
         },
         ",",
