@@ -11,6 +11,7 @@ const activeTimeouts = [];
 const AUTO_RESTART_DELAY = 1000;   // optional delay after narrative ends (ms)
 const FIRST_CHAPTER = "chapter-start";
 const restartButton = document.getElementById("restartButton");
+let currentRunId = 0; // incremented when a chapter starts
 
 restartButton.addEventListener("click", () => {
   stopBackgroundLoop();      // stop ongoing audio
@@ -65,6 +66,8 @@ export function showChapter(id) {
   fetch(`chapters/${id}.json`)
     .then(response => response.json())
     .then(chapter => {
+      // mark this run — any previous callbacks should ignore themselves
+      const myRunId = ++currentRunId;
       // --- Dynamic content margin control ---
       if (chapter.marginTop) {
         contentEl.style.setProperty('--content-margin-top', chapter.marginTop);
@@ -79,17 +82,20 @@ export function showChapter(id) {
       }
 
       const lastWasValueRef = { value: false };
-      revealContent(chapter.content, lastWasValueRef);
+      revealContent(chapter.content, lastWasValueRef, myRunId);
       handleAutoAdvance(chapter.autoAdvance);
 
     })
     .catch(error => console.error(`Failed to load ${id}:`, error));
 }
 
-function revealContent(contentArray, lastWasValueRef) {
+function revealContent(contentArray, lastWasValueRef, runId) {
   let index = 0;
 
   function next() {
+    // run-guard: ignore callbacks that belong to older runs
+    if (runId !== currentRunId) return;
+
     if (index >= contentArray.length) return;
 
     const item = contentArray[index++];
@@ -106,7 +112,8 @@ function handleAutoAdvance(autoAdvance) {
   const { type, delay, target, next } = autoAdvance;
 
   if (type === "timeout" && delay && next) {
-    activeTimeouts.push(setTimeout(() => showChapter(next), delay));
+    const id = setTimeout(() => showChapter(next), delay);
+    activeTimeouts.push({ type: "timeout", id });
   }
 
   if (type === "mediaEnd" && target && next) {

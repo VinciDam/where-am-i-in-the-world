@@ -42,7 +42,8 @@ export function showVideo(item, next, contentEl, activeTimeouts, lastWasValueRef
     contentEl.scrollTop = contentEl.scrollHeight;
     // Add timeout to go to next piece of content
     lastWasValueRef.current = false;
-    activeTimeouts.push(setTimeout(next, 100));
+    const id = setTimeout(next, 100);
+    activeTimeouts.push({ type: "timeout", id });
   }
   
   export function createScrollingSubtitle(text, className, duration) {

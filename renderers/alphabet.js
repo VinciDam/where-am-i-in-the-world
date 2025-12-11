@@ -40,10 +40,11 @@ export function showWordSequence(item, next, contentEl, activeTimeouts, lastWasV
 
   function showNextWord() {
     if (index >= words.length) {
-      activeTimeouts.push(setTimeout(() => {
+      const id2 = setTimeout(() => {
         contentEl.removeChild(wrapper);
         next();
-      }, 1000));
+      }, 1000);
+      activeTimeouts.push({ type: "timeout", id: id2 });
       return;
     }
 
@@ -51,7 +52,8 @@ export function showWordSequence(item, next, contentEl, activeTimeouts, lastWasV
     englishSpan.textContent = word;
     jellySpan.textContent = translateToJellyScript(word);
 
-    activeTimeouts.push(setTimeout(showNextWord, delay));
+    const id1 = setTimeout(showNextWord, delay);
+    activeTimeouts.push({ type: "timeout", id: id1 });
   }
 
   showNextWord();

@@ -37,5 +37,6 @@ export function showValue(item, next, contentEl, activeTimeouts, lastWasValueRef
   contentEl.appendChild(span);
   
   lastWasValueRef.current = true;
-  activeTimeouts.push(setTimeout(next, 100));
+  const id = setTimeout(next, 100);
+  activeTimeouts.push({ type: "timeout", id });
 }

@@ -39,6 +39,7 @@ export function showImage(item, next, contentEl, activeTimeouts, lastWasValueRef
     });
 
     const delay = item.replaceAfter || 100;
-    activeTimeouts.push(setTimeout(next, delay));
+    const id = setTimeout(next, delay);
+    activeTimeouts.push({ type: "timeout", id });
   }
 }

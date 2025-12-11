@@ -33,7 +33,8 @@ export function showTextItem(item, next, contentEl, activeTimeouts, lastWasValue
   if (text === "") {
     contentEl.appendChild(document.createElement("br"));
     lastWasValueRef.current = false;
-    activeTimeouts.push(setTimeout(next, 20));
+    const id = setTimeout(next, 20);
+    activeTimeouts.push({ type: "timeout", id });
     return;
   }
 
@@ -98,7 +99,8 @@ export function showBlock(item, next, contentEl, activeTimeouts, lastWasValueRef
   function nextChild() {
     if (i >= children.length) {
       if (breakAfter) div.appendChild(document.createElement("br"));
-      activeTimeouts.push(setTimeout(next, 40));
+      const id = setTimeout(next, 40);
+      activeTimeouts.push({ type: "timeout", id });
       return;
     }
 

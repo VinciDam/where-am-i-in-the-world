@@ -20,7 +20,8 @@ export function showVideoGrid(item, next, contentEl, activeTimeouts, lastWasValu
   
     contentEl.appendChild(container);
     lastWasValueRef.current = false;
-    activeTimeouts.push(setTimeout(next, 100));
+    const id = setTimeout(next, 100);
+    activeTimeouts.push({ type: "timeout", id });
   }
   
   export function showImageGrid(item, next, contentEl, activeTimeouts, lastWasValueRef) {
@@ -40,6 +41,7 @@ export function showVideoGrid(item, next, contentEl, activeTimeouts, lastWasValu
   
     contentEl.appendChild(container);
     lastWasValueRef.current = false;
-    activeTimeouts.push(setTimeout(next, 100));
+    const id = setTimeout(next, 100);
+    activeTimeouts.push({ type: "timeout", id });
   }
   
