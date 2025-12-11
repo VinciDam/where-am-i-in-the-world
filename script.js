@@ -40,7 +40,15 @@ function onValueClick(link) {
 }
 
 function clearTimeouts() {
-  activeTimeouts.forEach(clearTimeout);
+  for (const entry of activeTimeouts) {
+    if (!entry) continue;
+
+    if (entry.type === "timeout") {
+      clearTimeout(entry.id);
+    } else if (entry.type === "raf") {
+      cancelAnimationFrame(entry.id);
+    }
+  }
   activeTimeouts.length = 0;
 }
 

@@ -52,11 +52,17 @@ export function showTextItem(item, next, contentEl, activeTimeouts, lastWasValue
 }
 
 export function clearTextThenNext(contentEl, next, activeTimeouts, delay = 1000) {
-  activeTimeouts.push(setTimeout(() => {
+  // Cancel any pending timeouts
+  activeTimeouts.forEach(clearTimeout);
+  activeTimeouts.length = 0;
+
+  // Schedule clearing + next step
+  setTimeout(() => {
     contentEl.innerHTML = "";
     next();
-  }, delay));
+  }, delay);
 }
+
 
 // NEW: block text with alignment
 export function showBlock(item, next, contentEl, activeTimeouts, lastWasValueRef) {
@@ -126,6 +132,15 @@ function revealTextCharByChar(
   let charIndex = 0;
   let currentSpan = null;
 
+  function scheduleNextFrame() {
+    const timeoutId = setTimeout(() => {
+      const rafId = requestAnimationFrame(nextChar);
+      activeTimeouts.push({ type: "raf", id: rafId });
+    }, WORD_REVEAL_DELAY);
+
+    activeTimeouts.push({ type: "timeout", id: timeoutId });
+  }
+
   function nextChar() {
     // all tokens done
     if (tokenIndex >= tokens.length) {
@@ -150,7 +165,7 @@ function revealTextCharByChar(
       currentSpan.textContent += token; // render all spaces at once
       tokenIndex++;
       charIndex = 0;
-      activeTimeouts.push(setTimeout(nextChar, WORD_REVEAL_DELAY)); // only one delay
+      scheduleNextFrame(); // only one delay
       return;
     }
 
@@ -164,7 +179,7 @@ function revealTextCharByChar(
       charIndex = 0;
     }
 
-    activeTimeouts.push(setTimeout(nextChar, WORD_REVEAL_DELAY));
+    scheduleNextFrame();
   }
 
   nextChar();
