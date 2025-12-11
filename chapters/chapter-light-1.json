@@ -11,7 +11,12 @@
         {
           "pause": 400
         },
-        "Josephus, remember, for whom the sun did not pause but ",
+        "Josephus, ",
+        "remember, ",
+        {
+          "pause": 120
+        },
+        "for whom the sun did not pause but ",
         {
           "value": "lengthen",
           "link": "chapter-lengthen"
