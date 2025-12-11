@@ -1,7 +1,13 @@
 {
   "content": [
     {
-      "block": "a walk could last forever like the steps could last forever: in and out and out of sea.",
+      "block": [
+        "a walk could last forever like the steps could last forever: ",
+        {
+          "pause": 350
+        },
+        "in and out and out of sea."
+      ],
       "align": "justify"
     },
     {

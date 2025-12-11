@@ -1,6 +1,9 @@
 {
   "content": [
     "up north, we find a burgundy stone.",
+    {
+      "pause": 350
+    },
     "",
     "in the silt, we find a snowflake flint.",
     {

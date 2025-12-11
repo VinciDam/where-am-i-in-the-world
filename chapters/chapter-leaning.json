@@ -18,13 +18,22 @@
         {
           "em": " since the age of five, "
         },
+        {
+          "pause": 250
+        },
         "",
         {
           "em": "like a comfortably leaning wheel. "
         },
+        {
+          "pause": 350
+        },
         "",
         "",
         "a leaning wheel is an earthmover.",
+        {
+          "pause": 350
+        },
         "",
         "",
         "it digs and digs",
@@ -36,6 +45,9 @@
         "",
         "",
         "mostly sideways,",
+        {
+          "pause": 250
+        },
         "",
         "usually uphill."
       ],

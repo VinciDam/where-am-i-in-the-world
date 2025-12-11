@@ -18,7 +18,11 @@
     },
     {
       "block": [
-        "if i tell you that to write a landscape is to practice patience, what would you     ",
+        "if i tell you that to write a landscape is to practice patience",
+        {
+          "pause": 350
+        },
+        ", what would you     ",
         {
           "value": "view",
           "link": "chapter-view",

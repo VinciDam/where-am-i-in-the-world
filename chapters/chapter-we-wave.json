@@ -86,7 +86,7 @@
         },
         ", ",
         {
-          "pause": 300
+          "pause": 400
         },
         "we thank Onibaba for ",
         {
@@ -95,7 +95,7 @@
         ", we thank Handel (& George Gouraud) ",
         "for ",
         {
-          "em": "a chorus of 4000 voices recorded with phonograph over 100 yards away. "
+          "em": "a chorus of 4000 voices recorded with phonograph over 100 yards away, "
         },
         {
           "pause": 300
@@ -119,7 +119,7 @@
         },
         "we thank those who called and those who wrote, ",
         {
-          "pause": 300
+          "pause": 400
         },
         "we thank those we missed."
       ],

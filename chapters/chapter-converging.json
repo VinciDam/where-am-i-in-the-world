@@ -7,10 +7,23 @@
           "value": "body",
           "link": "chapter-body"
         },
-        ". we saw them, down there, one by one. we saw them, down there, one and one, and all were one: one fin,"
+        ". ",
+        {
+          "pause": 350
+        },
+        "we saw them, down there, one by one. ",
+        {
+          "pause": 350
+        },
+        "we saw them, down there, one and one, and all were one: ",
+        {
+          "pause": 350
+        },
+        "one fin,"
       ],
       "align": "justify"
     },
+    
     {
       "text": "one belly, ",
       "indent": 56
@@ -27,6 +40,9 @@
     },
     "",
     "",
+    {
+      "pause": 350
+    },
     {
       "block": "but where am i in this world?",
       "align": "center"

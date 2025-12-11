@@ -31,6 +31,9 @@
       "block": "how clever!",
       "align": "center"
     },
+    {
+      "pause": 400
+    },
     "",
     {
       "block": [

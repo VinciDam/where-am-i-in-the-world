@@ -3,14 +3,23 @@
     {
       "block": [
         "all these days, your fingers as bookmarks:",
+        {
+          "pause": 350
+        },
         "",
         "",
         "",
         "you have a line",
+        {
+          "pause": 350
+        },
         "",
         "you have a line",
         "",
         "or two",
+        {
+          "pause": 350
+        },
         "",
         "at least a ",
         {

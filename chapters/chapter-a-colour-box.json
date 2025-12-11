@@ -21,8 +21,14 @@
         {
           "em": "first ballet in film."
         },
+        {
+          "pause": 350
+        },
         "",
         "our tuft, the first ballet on window.",
+        {
+          "pause": 450
+        },
         "",
         "it moves ",
         {
@@ -32,6 +38,9 @@
           "volume": 0.5
         },
         ",",
+        {
+          "pause": 450
+        },
         "",
         "",
         "up and down and left and right,",

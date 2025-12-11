@@ -10,6 +10,9 @@
       "width": "60%"
     },
     {
+      "pause": 1500
+    },
+    {
       "replicateImage": "https://pub-483592edf5cb4460ac2426340c4e6402.r2.dev/images/aero_gun_empty.png",
       "coordinates": [
         {
@@ -30,7 +33,7 @@
         }
       ],
       "width": "45%",
-      "interval": 500,
+      "interval": 1000,
       "replaceAfter": 3000
     }
   ]

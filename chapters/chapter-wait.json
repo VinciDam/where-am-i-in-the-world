@@ -19,11 +19,18 @@
         {
           "pause": 450
         },
-        "you say “maybe”. i say “maybe”. ",
+        "you say “maybe”. ",
+        {
+          "pause": 250
+        },
+        "i say “maybe”. ",
         {
           "pause": 450
         },
         "christmas lights don’t blink and candles don’t blink. ",
+        {
+          "pause": 350
+        },
         "in the corner, a puzzle box for children: ",
         {
           "pause": 500
@@ -33,11 +40,19 @@
         {
           "pause": 500
         },
-        "you can match mickey to mickey, donald to donald. you can memorise. ",
+        "you can match mickey to mickey, donald to donald. ",
+        {
+          "pause": 350
+        },
+        "you can memorise. ",
         {
           "pause": 500
         },
-        "you can see an apple but you don’t bite, for the apple is not. ",
+        "you can see an apple but you don’t bite, ",
+        {
+          "pause": 250
+        },
+        "for the apple is not. ",
         {
           "pause": 500
         },
@@ -46,13 +61,20 @@
           "pause": 500
         },
         "you can count the lights and you can count the light ",
-        "they make. you can count the ",
+        "they make. ",
+        {
+          "pause": 450
+        },
+        "you can count the ",
         {
           "em": "wandering clouds"
         },
         ","
       ],
       "align": "justify"
+    },
+    {
+      "pause": 450
     },
     "",
     {
@@ -66,7 +88,7 @@
         " the space.",
         "",
         {
-          "pause": 250
+          "pause": 350
         },
         "from form they draw a shadow."
       ],

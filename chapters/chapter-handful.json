@@ -22,11 +22,17 @@
       "delay": 2000
     },
     "to make a pony from a hand,",
+    {
+      "pause": 350
+    },
     "",
     "                           place",
     "",
     "                           one finger for head",
     "",
+    {
+      "pause": 250
+    },
     "                           all others for legs:",
     {
       "pause": 800
@@ -34,8 +40,14 @@
     {
       "block": [
         "three on one side",
+        {
+          "pause": 250
+        },
         "",
         "one on other",
+        {
+          "pause": 250
+        },
         "",
         "each pony",
         "",
