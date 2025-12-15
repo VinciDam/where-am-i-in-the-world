@@ -37,6 +37,9 @@
       "align": "center"
     },
     {
+      "pause": 350
+    },
+    {
       "block": [
         "has ",
         {
@@ -53,7 +56,7 @@
     "",
     {
       "clearText": true,
-      "delay": 1500
+      "delay": 1700
     },
     {
       "block": [
@@ -63,11 +66,17 @@
         },
         " dreaming of home / ",
         {
+          "pause": 250
+        },
+        {
           "em": "in"
         },
         " dreaming of sea, or"
       ],
       "align": "center"
+    },
+    {
+      "pause": 400
     },
     {
       "block": [
@@ -81,6 +90,9 @@
         },
         " / ",
         {
+          "pause": 250
+        },
+        {
           "em": "in"
         },
         " to ",
@@ -92,6 +104,9 @@
       "align": "center"
     },
     "",
+    {
+      "pause": 550
+    },
     {
       "block": "/ snout to snout /",
       "align": "center"

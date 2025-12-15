@@ -15,14 +15,14 @@
       "align": "justify"
     },
     {
-      "pause": 1800
+      "pause": 800
     },
     {
       "video": "videos/crop_clock.mp4",
       "width": "20%"
     },
     {
-      "pause": 2300
+      "pause": 1500
     },
     {
       "block": [
