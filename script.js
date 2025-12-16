@@ -5,6 +5,12 @@ import { stopChapterAudio,
   stopBackgroundLoop, resetBackgroundTrigger } from './audio/audioEngine.js';
 import { resetLinkClicks } from './state.js';
 import { startIdleMonitor } from "./idleTimeout.js";
+import {
+  getWordRevealDelay,
+  setWordRevealDelay,
+  resetWordRevealDelay,
+  getWordRevealSpeedNormalized
+} from "./renderers/text.js";
 
 const contentEl = document.getElementById("content");
 const activeTimeouts = [];
@@ -12,10 +18,63 @@ const AUTO_RESTART_DELAY = 1000;   // optional delay after narrative ends (ms)
 const FIRST_CHAPTER = "chapter-start";
 const restartButton = document.getElementById("restartButton");
 let currentRunId = 0; // incremented when a chapter starts
+let speedIndicatorTimeout = null;
+
+export function showSpeedIndicator(fill) {
+  let el = document.getElementById("speed-indicator");
+
+  if (!el) {
+    el = document.createElement("div");
+    el.id = "speed-indicator";
+
+    const bar = document.createElement("div");
+    bar.className = "speed-bar";
+    el.appendChild(bar);
+
+    document.body.appendChild(el);
+  }
+
+  const bar = el.querySelector(".speed-bar");
+
+  // container styles
+  el.style.position = "fixed";
+  el.style.bottom = "20px";
+  el.style.right = "20px";
+  el.style.width = "120px";
+  el.style.height = "6px";
+  el.style.background = "rgba(155,155,155,0.1)";
+  el.style.zIndex = "9999";
+
+  // bar styles
+  bar.style.height = "100%";
+  bar.style.width = "100%";
+  bar.style.background = "rgba(155,155,155,0.8)";
+  bar.style.transformOrigin = "left center";
+  bar.style.transform = `scaleX(${fill})`;
+
+  // visibility
+  el.style.opacity = "1";
+
+  if (speedIndicatorTimeout) clearTimeout(speedIndicatorTimeout);
+  speedIndicatorTimeout = setTimeout(() => {
+    el.style.opacity = "0";
+  }, 800);
+}
+
+window.addEventListener("keydown", (e) => {
+  if (e.key === "ArrowUp") {
+    setWordRevealDelay(getWordRevealDelay() - 10);
+    showSpeedIndicator(getWordRevealSpeedNormalized());
+  } else if (e.key === "ArrowDown") {
+    setWordRevealDelay(getWordRevealDelay() + 10);
+    showSpeedIndicator(getWordRevealSpeedNormalized());
+  }
+});
 
 restartButton.addEventListener("click", () => {
   stopBackgroundLoop();      // stop ongoing audio
   resetBackgroundTrigger();
+  resetWordRevealDelay();
   showChapter(FIRST_CHAPTER); // restart narrative
   resetLinkClicks();         // reset click counters
   restartButton.style.display = "none";
@@ -26,6 +85,7 @@ export function restartNarrative() {
   setTimeout(() => {
     stopBackgroundLoop();
     resetBackgroundTrigger();
+    resetWordRevealDelay();
     showChapter(FIRST_CHAPTER);
     resetLinkClicks();
   }, AUTO_RESTART_DELAY);

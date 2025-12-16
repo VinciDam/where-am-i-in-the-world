@@ -3,7 +3,31 @@
 import { dispatchContent } from "../dispatcher.js";
 
 // Timing configuration
-const WORD_REVEAL_DELAY = 70;
+const DEFAULT_WORD_REVEAL_DELAY = 70;
+let WORD_REVEAL_DELAY = DEFAULT_WORD_REVEAL_DELAY;
+
+// tight, conservative clamp
+const MIN_REVEAL_DELAY = 30;
+const MAX_REVEAL_DELAY = 140;
+
+export function getWordRevealSpeedNormalized() {
+  return (MAX_REVEAL_DELAY - WORD_REVEAL_DELAY) / (MAX_REVEAL_DELAY - MIN_REVEAL_DELAY);
+}
+
+export function getWordRevealDelay() {
+  return WORD_REVEAL_DELAY;
+}
+
+export function setWordRevealDelay(ms) {
+  WORD_REVEAL_DELAY = Math.max(
+    MIN_REVEAL_DELAY,
+    Math.min(MAX_REVEAL_DELAY, ms)
+  );
+}
+
+export function resetWordRevealDelay() {
+  WORD_REVEAL_DELAY = DEFAULT_WORD_REVEAL_DELAY;
+}
 
 export function showTextItem(item, next, contentEl, activeTimeouts, lastWasValueRef) {
   // --- Normalize input ---
@@ -153,6 +177,8 @@ function revealTextCharByChar(
   let charIndex = 0;
 
   function scheduleNextFrame() {
+    const delay = getWordRevealDelay();
+
     const timeoutId = setTimeout(() => {
       const rafId = requestAnimationFrame(nextChar);
       activeTimeouts.push({ type: "raf", id: rafId });
