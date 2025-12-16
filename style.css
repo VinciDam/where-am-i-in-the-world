@@ -217,3 +217,24 @@ video.autoplay-video {
   z-index: 1000;
   display: none; /* hidden by default */
 }
+
+#speed-indicator {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 120px;
+  height: 6px;
+  background: rgba(155, 155, 155, 0.2);
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+#speed-indicator .speed-bar {
+  height: 100%;
+  width: 100%;
+  background: rgba(155, 155, 155, 0.7);
+  transform-origin: left center;
+}
+

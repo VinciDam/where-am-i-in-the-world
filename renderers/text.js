@@ -7,8 +7,8 @@ const DEFAULT_WORD_REVEAL_DELAY = 70;
 let WORD_REVEAL_DELAY = DEFAULT_WORD_REVEAL_DELAY;
 
 // tight, conservative clamp
-const MIN_REVEAL_DELAY = 30;
-const MAX_REVEAL_DELAY = 140;
+const MIN_REVEAL_DELAY = 40;
+const MAX_REVEAL_DELAY = 100;
 
 export function getWordRevealSpeedNormalized() {
   return (MAX_REVEAL_DELAY - WORD_REVEAL_DELAY) / (MAX_REVEAL_DELAY - MIN_REVEAL_DELAY);

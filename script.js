@@ -36,20 +36,6 @@ export function showSpeedIndicator(fill) {
 
   const bar = el.querySelector(".speed-bar");
 
-  // container styles
-  el.style.position = "fixed";
-  el.style.bottom = "20px";
-  el.style.right = "20px";
-  el.style.width = "120px";
-  el.style.height = "6px";
-  el.style.background = "rgba(155,155,155,0.1)";
-  el.style.zIndex = "9999";
-
-  // bar styles
-  bar.style.height = "100%";
-  bar.style.width = "100%";
-  bar.style.background = "rgba(155,155,155,0.8)";
-  bar.style.transformOrigin = "left center";
   bar.style.transform = `scaleX(${fill})`;
 
   // visibility
@@ -63,10 +49,10 @@ export function showSpeedIndicator(fill) {
 
 window.addEventListener("keydown", (e) => {
   if (e.key === "ArrowUp") {
-    setWordRevealDelay(getWordRevealDelay() - 10);
+    setWordRevealDelay(getWordRevealDelay() - 2);
     showSpeedIndicator(getWordRevealSpeedNormalized());
   } else if (e.key === "ArrowDown") {
-    setWordRevealDelay(getWordRevealDelay() + 10);
+    setWordRevealDelay(getWordRevealDelay() + 2);
     showSpeedIndicator(getWordRevealSpeedNormalized());
   }
 });
