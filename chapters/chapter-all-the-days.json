@@ -5,8 +5,7 @@
         "and so will the ",
         {
           "value": "hour",
-          "link": "chapter-clock",
-          "audio": "audio/clock-single.mp3"
+          "link": "chapter-clock"
         },
         " be set"
       ],
