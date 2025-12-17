@@ -16,9 +16,19 @@
           "link": "chapter-riddle",
           "audio": "audio/cheepcheep.mp3"
         },
-        ":"
-      ],
-      "align": "center"
-    }
+        ":",
+      {
+        "pause": 700
+      },
+      "",
+      "",
+      ""
+        ],
+        "align": "center"
+      },
+      {
+        "image": "images/aero-dogs.jpg",
+        "width": "60%"
+      }
   ]
 }
