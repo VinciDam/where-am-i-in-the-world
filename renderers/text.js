@@ -3,12 +3,12 @@
 import { dispatchContent } from "../dispatcher.js";
 
 // Timing configuration
-const DEFAULT_WORD_REVEAL_DELAY = 70;
+const DEFAULT_WORD_REVEAL_DELAY = 72;
 let WORD_REVEAL_DELAY = DEFAULT_WORD_REVEAL_DELAY;
 
 // tight, conservative clamp
-const MIN_REVEAL_DELAY = 40;
-const MAX_REVEAL_DELAY = 100;
+const MIN_REVEAL_DELAY = 24;
+const MAX_REVEAL_DELAY = 110;
 
 export function getWordRevealSpeedNormalized() {
   return (MAX_REVEAL_DELAY - WORD_REVEAL_DELAY) / (MAX_REVEAL_DELAY - MIN_REVEAL_DELAY);

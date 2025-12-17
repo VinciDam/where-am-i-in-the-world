@@ -15,7 +15,7 @@ import {
 const contentEl = document.getElementById("content");
 const activeTimeouts = [];
 const AUTO_RESTART_DELAY = 1000;   // optional delay after narrative ends (ms)
-const FIRST_CHAPTER = "chapter-start";
+const FIRST_CHAPTER = "chapter-instructions";
 const restartButton = document.getElementById("restartButton");
 let currentRunId = 0; // incremented when a chapter starts
 let speedIndicatorTimeout = null;
@@ -36,7 +36,7 @@ export function showSpeedIndicator(fill) {
 
   const bar = el.querySelector(".speed-bar");
 
-  bar.style.transform = `scaleX(${fill})`;
+  bar.style.transform = `scaleY(${fill})`;
 
   // visibility
   el.style.opacity = "1";
