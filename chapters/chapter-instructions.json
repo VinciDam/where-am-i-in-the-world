@@ -1,0 +1,59 @@
+{
+  "content": [
+    {
+      "pause": 750
+    },
+    {
+        "block":
+        [
+            "this project is best experienced on a laptop or desktop, in fullscreen mode. ",
+            {
+            "pause": 300
+            },
+            "it is not optimised for mobile.",
+            "",
+            {
+            "pause": 600
+            },
+            "",
+            "it uses audio, and headphones are recommended.",
+            "",
+            {
+            "pause": 600
+            },
+            "",
+            "it lasts around 20 minutes, depending on the letter speed.",
+            "",
+            {
+            "pause": 600
+            },
+            "",
+            "the letter speed can be adjusted by pressing the ▼ and ▲ keys on your keyboard. ",
+            {
+            "pause": 400
+            },
+            "try pressing these keys. ",
+            {
+            "pause": 600
+            },
+            "a speed indicator bar should briefly appear at the bottom right corner of your screen.",
+            "",
+            {
+            "pause": 750
+            },
+            "",
+            "progress is not saved and refreshing starts anew."
+        ],
+        "align": "justify"
+    },
+    "",
+    "",
+    { "pause": 1500 },
+    "",
+    {
+        "value": ">> start",
+        "link": "chapter-start"
+    },
+    ""
+  ]
+}
