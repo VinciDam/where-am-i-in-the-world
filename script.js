@@ -15,7 +15,7 @@ import {
 const contentEl = document.getElementById("content");
 const activeTimeouts = [];
 const AUTO_RESTART_DELAY = 1000;   // optional delay after narrative ends (ms)
-const FIRST_CHAPTER = "chapter-instructions";
+const FIRST_CHAPTER = "chapter-start";
 const restartButton = document.getElementById("restartButton");
 let currentRunId = 0; // incremented when a chapter starts
 let speedIndicatorTimeout = null;
@@ -78,7 +78,7 @@ export function restartNarrative() {
 }
 
 window.onload = () => {
-  showChapter(FIRST_CHAPTER);
+  showChapter("chapter-instructions");
   startIdleMonitor(); // begin monitoring
 };
 
