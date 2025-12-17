@@ -22,8 +22,8 @@ export function showImage(item, next, contentEl, activeTimeouts, lastWasValueRef
     img.src = item.image;
     img.alt = item.alt || "";
     img.className = "content-image";
-    img.style.display = "block";
-    img.style.margin = "1rem 0";
+    // img.style.display = "block";
+    // img.style.margin = "1rem 0";
 
     // Get additional properties from "image" field in json
     if (item.width) img.style.width = item.width;

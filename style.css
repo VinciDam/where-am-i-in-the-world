@@ -140,6 +140,11 @@ video.autoplay-video {
   opacity: 0;
   transition: opacity 1.7s ease-in-out;
   will-change: transform;
+
+  /* Ensure horizontal centering */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .content-image.visible {
