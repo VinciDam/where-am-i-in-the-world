@@ -10,6 +10,7 @@ import { showAnimatedImage, showReplicatedImages,
   showScalingImage, showAnimatedSquiggle, showCircularAnimatedImage } from './renderers/animatedImage.js';
 import { setBackgroundImages, clearBackgroundImages } from './renderers/background.js';
 import { restartNarrative } from "./script.js";
+import { stopBackgroundLoop } from './audio/audioEngine.js';
 
 export function dispatchContent(item, next, contentEl, activeTimeouts, lastWasValueRef, onValueClick) {
   if (item.clearText) {
@@ -49,6 +50,8 @@ export function dispatchContent(item, next, contentEl, activeTimeouts, lastWasVa
     showReplicatedImages(item, next, activeTimeouts, lastWasValueRef);
   } else if (item.squiggleSvg) {
     showAnimatedSquiggle(item, next, activeTimeouts, lastWasValueRef);
+  } else if (item.stopAudio) {
+    stopBackgroundLoop();
   } else if (item.restartNarrative) {
     restartNarrative();
   } else {

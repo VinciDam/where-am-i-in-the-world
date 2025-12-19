@@ -77,6 +77,7 @@ export function restartNarrative() {
   }, AUTO_RESTART_DELAY);
 }
 
+
 window.onload = () => {
   showChapter(FIRST_CHAPTER);
   startIdleMonitor(); // begin monitoring
