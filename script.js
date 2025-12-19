@@ -78,7 +78,7 @@ export function restartNarrative() {
 }
 
 window.onload = () => {
-  showChapter("chapter-instructions");
+  showChapter(FIRST_CHAPTER);
   startIdleMonitor(); // begin monitoring
 };
 

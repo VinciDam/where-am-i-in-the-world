@@ -52,8 +52,7 @@
     "this return is a ",
     {
       "value": "poem",
-      "link": "chapter-beginning",
-      "audio": "audio/clock-single.mp3"
+      "link": "chapter-beginning"
     },
     "."
   ]
