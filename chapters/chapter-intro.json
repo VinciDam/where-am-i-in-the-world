@@ -8,33 +8,20 @@
         "",
         {
           "pause": 800
-        },
-        "no one we knew was there.",
-        {
-          "pause": 650
         }
       ],
       "align": "justify"
     },
+    "no one we knew was there.",
+    {
+      "pause": 480
+    },
+    "",
     "we had the island, and we had each other.",
-    {
-      "clearText": true,
-      "delay": 1300
-    },
-    "we were married by a woman whose name we don’t remember, ",
-    "",
-    {
-      "pause": 650
-    },
-    "witnessed by two whose names we never knew.",
     "",
     "",
-    {
-      "pause": 800
-    },
     {
       "block": [
-        "with them, we spoke about the weather and drank sweet muscat wine. ",
         {
           "pause": 650
         },
