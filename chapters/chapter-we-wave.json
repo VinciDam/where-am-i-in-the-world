@@ -19,7 +19,10 @@
         {
           "pause": 350
         },
-        "we came together."
+        "we came together.",
+        {
+          "pause": 300
+        }
       ],
       "align": "justify"
     },
@@ -44,12 +47,20 @@
     {
       "pause": 850
     },
-    "                                    farewell,",
-    "",
+    {
+      "block": [
+        "farewell",
+        ""
+      ], "align": "center"
+    }, 
     {
       "pause": 850
     },
-    "                                                    farewell.)",
+    {
+      "block": [
+        "farewell.)"
+      ], "align": "right"
+    },
     {
       "clearText": true,
       "delay": 2300
