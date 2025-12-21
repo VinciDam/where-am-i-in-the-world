@@ -43,6 +43,8 @@ body {
   
 #content {
   max-width: 40rem; /* ~720px, better for readability */
+  max-height: calc(100vh - var(--content-margin-top, 10vh) - var(--content-margin-bottom, 5vh));
+  overflow-y: auto;
   margin: var(--content-margin-top, 10vh) auto var(--content-margin-bottom, 5vh);
   padding: 2rem 1rem;
   position: relative;
