@@ -4,7 +4,7 @@
 }
 
 html {
-  font-size: clamp(14px, 1.8vh, 26px);
+  font-size: clamp(9px, 1.8vh, 26px);
 }
 
 body {
