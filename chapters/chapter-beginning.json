@@ -3,12 +3,16 @@
     {
       "pause": 1200
     },
-    "one could say that this day depends on a thousand ",
     {
-      "value": "accidents",
-      "link": "chapter-accidents"
+      "block": [
+        "one could say that this day depends on a thousand ",
+        {
+          "value": "accidents",
+          "link": "chapter-accidents"
+        },
+        " and two parts:"
+      ], "align": "justify"
     },
-    " and two parts:",
     "",
     {
       "pause": 650
