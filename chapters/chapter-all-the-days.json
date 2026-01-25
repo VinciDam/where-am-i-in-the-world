@@ -2,27 +2,27 @@
   "content": [
     {
       "block": [
-        "and so will the ",
+        "today on the outside,", "",
+        "we parse it in chunks.", "",
+        { "pause": 500 },
+        "                           one-to-two", "",
+        "                           two-to-one,", "",
+        { "pause": 500 }
+      ],
+      "align": "left"
+    },
+    {
+      "block": [
+        "throbbing softly", "",
+        "with a ",
         {
-          "value": "hour",
+          "value": "pulse",
           "link": "chapter-clock",
           "audio": "audio/new-clock.mp3"
         },
-        " be set"
+        "."
       ],
-      "align": "center"
-    },
-    {
-      "block": [
-        "to a memory"
-      ],
-      "align": "center"
-    },
-    {
-      "block": [
-        "of some folkloric event."
-      ],
-      "align": "center"
+      "align": "right"
     }
   ]
 }

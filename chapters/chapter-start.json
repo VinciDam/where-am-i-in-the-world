@@ -1,4 +1,5 @@
 {
+  "marginTop": "10vh",
   "content": [
     {
       "pause": 750
@@ -9,9 +10,16 @@
             {
               "em": "where am i in the world?"
             },
-            " is best experienced on a laptop or desktop, in fullscreen mode. ",
+            " is an interactive poem composed of reflections, dreams, and materials ",
+            "gathered during our wedding journey to the island of Ærø, Denmark. ",
+            "",
             {
-            "pause": 300
+            "pause": 400
+            },
+            "",
+            "it is best experienced on a laptop or desktop, in fullscreen mode. ",
+            {
+            "pause": 250
             },
             "it is not optimised for mobile.",
             "",
@@ -25,12 +33,10 @@
             "pause": 600
             },
             "",
-            "it lasts around 20 minutes, depending on the letter speed.",
-            "",
+            "it lasts around 20 minutes, depending on the letter speed. ",
             {
             "pause": 600
             },
-            "",
             "the letter speed can be adjusted by pressing the ▼ and ▲ keys on your keyboard. ",
             {
             "pause": 400
@@ -58,7 +64,7 @@
         "",
         {
           "value": "where",
-          "link": "chapter-intro"
+          "link": "chapter-beginning"
         },
         " am i in the world?"
       ],
