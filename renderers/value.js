@@ -2,7 +2,7 @@ import { showChapter } from '../script.js';
 import { playSoundFromUrl, startBackgroundOnce } from '../audio/audioEngine.js';
 import { incrementLinkClicks, getLinkClicks } from '../state.js';
 
-const BACKGROUND_START_AFTER = 2; // start background on this click number
+const BACKGROUND_START_AFTER = 1; // start background on this click number
 
 export function showValue(item, next, contentEl, activeTimeouts, lastWasValueRef) {
   const span = document.createElement("span");
