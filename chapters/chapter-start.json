@@ -1,5 +1,5 @@
 {
-  "marginTop": "10vh",
+  "marginTop": "8vh",
   "content": [
     {
       "pause": 750
@@ -12,12 +12,19 @@
             },
             " is a poetic narrative composed of reflections, dreams, and materials ",
             "gathered during our wedding journey to the island of Ærø, Denmark. ",
-            "",
+            {
+            "pause": 300
+            },
+            "we married in a hurry, ",
+            {
+            "pause": 250
+            },
+            "for sometimes many years of living in a country are as airy as a few.",
+            "", "",
             {
             "pause": 400
             },
-            "",
-            "it is best experienced on a laptop or desktop, in fullscreen mode. ",
+            "the poem is best experienced on a laptop or desktop, in fullscreen mode. ",
             {
             "pause": 250
             },
