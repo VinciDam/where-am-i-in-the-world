@@ -6,16 +6,35 @@
         {
           "pause": 600
         },
-        "we sit on a train and we change seats / row back, row forth / we change seats ",
-        "and sand pours small, shimmering, like a slow-filling ",
+        "we sit on a train and we change seats / row back, row ",
         {
-          "value": "infinity",
+          "value": "forth",
           "link": "chapter-infinity",
           "audio": "audio/train-frondsburg.mp3"
         },
-        " pool."
+        " / we change seats ",
+        "and sand pours small, shimmering,",
+        {
+          "pause": 520
+        },
+        "",
+        "",
+        ""
       ],
       "align": "justify"
+    },
+    {
+      "block": [
+        {
+          "em": "following a great wall,"
+        },
+        {
+          "pause": 450
+        },
+        "",
+        "sand starts in the ocean."
+      ],
+      "align": "right"
     }
   ]
 }
